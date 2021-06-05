@@ -68,8 +68,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AccesoAdministrador.aspx" />
+    <Content Include="Estilos.css" />
     <Content Include="Web.config" />
     <Content Include="Acceso usuario.aspx" />
+    <Content Include="MenuUsuario.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccesoAdministrador.aspx.cs">
@@ -86,6 +88,13 @@
     </Compile>
     <Compile Include="Acceso usuario.aspx.designer.cs">
       <DependentUpon>Acceso usuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MenuUsuario.aspx.cs">
+      <DependentUpon>MenuUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MenuUsuario.aspx.designer.cs">
+      <DependentUpon>MenuUsuario.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
