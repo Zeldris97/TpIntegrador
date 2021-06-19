@@ -74,7 +74,7 @@ namespace Dao
             SqlParametros.Value = pel.getNombre();
             SqlParametros = Comando.Parameters.Add("@SINOPSIS", SqlDbType.Text);
             SqlParametros.Value = pel.getSinopsis();
-            SqlParametros = Comando.Parameters.Add("@DIRECCIONSUCURSAL", SqlDbType.BigInt);
+            SqlParametros = Comando.Parameters.Add("@AÑO", SqlDbType.BigInt);
             SqlParametros.Value = pel.getAnio();
             SqlParametros = Comando.Parameters.Add("@IDGENERO", SqlDbType.Int);
             SqlParametros.Value = pel.getIdGenero();
