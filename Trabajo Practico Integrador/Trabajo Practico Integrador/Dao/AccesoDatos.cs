@@ -82,16 +82,16 @@ namespace Dao
         public int ObtenerMaximo(String consulta)
         {
             int max = 0;
-            SqlConnection Conexion = ObtenerConexion();
-            SqlCommand cmd = new SqlCommand(consulta, Conexion);
+            SqlConnection conexion = new SqlConnection();
+            SqlCommand cmd = new SqlCommand(consulta, conexion);
             SqlDataReader datos = cmd.ExecuteReader();
             if (datos.Read())
             {
                 max = Convert.ToInt32(datos[0].ToString());
             }
             return max;
-        }
 
+        }
 
 
     }

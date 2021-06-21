@@ -29,7 +29,37 @@ namespace Dao
 
         }
 
+        private void armarParametrosCategoriasEliminar(ref SqlCommand comando, Categorias Cat)
+        {
+            SqlParameter sqlParametros = new SqlParameter();
+            sqlParametros = comando.Parameters.Add("@IDCATEGORIA", SqlDbType.Int);
+            sqlParametros.Value = Cat.getId();
+        }
 
+        public int eliminarCategoria(Categorias Cat)
+        {
+            SqlCommand cmd = new SqlCommand();
+            armarParametrosCategoriasEliminar(ref cmd, Cat);
+            return ds.EjecutarProcAlmacenado(cmd, "spEliminarCategoria");
 
+        }
+
+        private void armarParametrosCategoriasAgregar(ref SqlCommand comando, Categorias Cat)
+        {
+            SqlParameter sqlParametros = new SqlParameter();
+            sqlParametros = comando.Parameters.Add("@IDCATEGORIA", SqlDbType.Int);
+            sqlParametros.Value = Cat.getId();
+            sqlParametros = comando.Parameters.Add("@NOMBRECATEGORIA", SqlDbType.VarChar);
+            sqlParametros.Value = Cat.getNombre();
+        }
+
+        public int agregarCategoria(Categorias Cat)
+        {
+            Cat.setId(ds.ObtenerMaximo("SELECT max(ID) FROM Categorias")+1);
+            SqlCommand cmd = new SqlCommand();
+            armarParametrosCategoriasAgregar(ref cmd, Cat);
+            return ds.EjecutarProcAlmacenado(cmd, "spAgregarCategoria");
+
+        }
     }
 }

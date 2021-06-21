@@ -42,6 +42,40 @@ namespace Dao
             return Tabla;
         }
 
+        private void armarParametrosVerDespuesEliminar(ref SqlCommand comando, VerDespues vd)
+        {
+            SqlParameter sqlParametros = new SqlParameter();
+            sqlParametros = comando.Parameters.Add("@IDVERDESPUES", SqlDbType.Int);
+            sqlParametros.Value = vd.getId();
+        }
+
+        public int eliminarVerDespues(VerDespues vd)
+        {
+            SqlCommand cmd = new SqlCommand();
+            armarParametrosVerDespuesEliminar(ref cmd, vd);
+            return ds.EjecutarProcAlmacenado(cmd, "spEliminarVerDespues");
+
+        }
+
+        private void armarParametrosVerDespuesAgregar(ref SqlCommand comando, VerDespues vd)
+        {
+            SqlParameter sqlParametros = new SqlParameter();
+            sqlParametros = comando.Parameters.Add("@IDVERDESPUES", SqlDbType.Int);
+            sqlParametros.Value = vd.getId();
+            sqlParametros = comando.Parameters.Add("@IDUSUARIOVERDESPUES", SqlDbType.Int);
+            sqlParametros.Value = vd.getIdUser();
+            sqlParametros = comando.Parameters.Add("@IDPELICULAVERDESPUES", SqlDbType.Int);
+            sqlParametros.Value = vd.getIdPelicula();
+        }
+
+        public int agregarVerDespues(VerDespues vd)
+        {
+            vd.setId(ds.ObtenerMaximo("SELECT max(ID) FROM VerDespues") + 1);
+            SqlCommand cmd = new SqlCommand();
+            armarParametrosVerDespuesAgregar(ref cmd, vd);
+            return ds.EjecutarProcAlmacenado(cmd, "spAgregarVerDespues");
+
+        }
 
 
     }

@@ -40,46 +40,49 @@ namespace Dao
             return Tabla;
         }
 
-
-        public int agregarPelicula(Peliculas pel)
+        private void armarParametrosPeliculasEliminar(ref SqlCommand comando, Peliculas Peli)
         {
-
-
-            pel.setId(ds.ObtenerMaximo("SELECT max(ID) FROM Peliculas") + 1);
-            SqlCommand comando = new SqlCommand();
-            ArmarParametrosPeliculaAgregar(ref comando, pel);
-            return ds.EjecutarProcAlmacenado(comando, "spAgregarPelicula");
-        }
-        public int eliminarPelicula(Peliculas pel)
-        {
-            SqlCommand comando = new SqlCommand();
-            ArmarParametrosPeliculaEliminar(ref comando, pel);
-            return ds.EjecutarProcAlmacenado(comando, "spEliminarPelicula");
+            SqlParameter sqlParametros = new SqlParameter();
+            sqlParametros = comando.Parameters.Add("@IDPELICULA", SqlDbType.Int);
+            sqlParametros.Value = Peli.getId();
         }
 
-
-        private void ArmarParametrosPeliculaEliminar(ref SqlCommand Comando, Peliculas pel)
+        public int eliminarPelicula(Peliculas Peli)
         {
-            SqlParameter SqlParametros = new SqlParameter();
-            SqlParametros = Comando.Parameters.Add("@IDPELICULA", SqlDbType.Int);
-            SqlParametros.Value = pel.getId();
+            SqlCommand cmd = new SqlCommand();
+            armarParametrosPeliculasEliminar(ref cmd, Peli);
+            return ds.EjecutarProcAlmacenado(cmd, "spEliminarPelicula");
+
         }
 
-        private void ArmarParametrosPeliculaAgregar(ref SqlCommand Comando, Peliculas pel)
+        private void armarParametrosPeliculasAgregar(ref SqlCommand comando, Peliculas Peli)
         {
-            SqlParameter SqlParametros = new SqlParameter();
-            SqlParametros = Comando.Parameters.Add("@IDPELICULA", SqlDbType.Int);
-            SqlParametros.Value = pel.getId();
-            SqlParametros = Comando.Parameters.Add("@NOMBREPELICULA", SqlDbType.VarChar);
-            SqlParametros.Value = pel.getNombre();
-            SqlParametros = Comando.Parameters.Add("@SINOPSIS", SqlDbType.Text);
-            SqlParametros.Value = pel.getSinopsis();
-            SqlParametros = Comando.Parameters.Add("@AÑO", SqlDbType.BigInt);
-            SqlParametros.Value = pel.getAnio();
-            SqlParametros = Comando.Parameters.Add("@IDGENERO", SqlDbType.Int);
-            SqlParametros.Value = pel.getIdGenero();
-            SqlParametros = Comando.Parameters.Add("@IDCATEGORIA", SqlDbType.Int);
-            SqlParametros.Value = pel.getCategorias();
+            SqlParameter sqlParametros = new SqlParameter();
+            sqlParametros = comando.Parameters.Add("@IDPELICULA", SqlDbType.Int);
+            sqlParametros.Value = Peli.getId();
+            sqlParametros = comando.Parameters.Add("@NOMBREPELICULA", SqlDbType.VarChar);
+            sqlParametros.Value = Peli.getNombre();
+            sqlParametros = comando.Parameters.Add("@IDGENERO", SqlDbType.Int);
+            sqlParametros.Value = Peli.getIdGenero();
+            sqlParametros = comando.Parameters.Add("@IDCATEGORIA", SqlDbType.Int);
+            sqlParametros.Value = Peli.getIdCategorias();
+            sqlParametros = comando.Parameters.Add("@ANIOPELICULA", SqlDbType.Int);
+            sqlParametros.Value = Peli.getAnio();
+            sqlParametros = comando.Parameters.Add("@SINOPSISPELICULA", SqlDbType.VarChar);
+            sqlParametros.Value = Peli.getSinopsis();
+            sqlParametros = comando.Parameters.Add("@IMGURLPELICULA", SqlDbType.VarChar);
+            sqlParametros.Value = Peli.getImgUrl();
+
+
+        }
+
+        public int agregarPelicula(Peliculas Peli)
+        {
+            Peli.setId(ds.ObtenerMaximo("SELECT max(ID) FROM Peliculas") + 1);
+            SqlCommand cmd = new SqlCommand();
+            armarParametrosPeliculasAgregar(ref cmd, Peli);
+            return ds.EjecutarProcAlmacenado(cmd, "spAgregarPelicula");
+
         }
     }
 }

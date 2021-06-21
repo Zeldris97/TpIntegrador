@@ -159,7 +159,8 @@
                         <asp:TextBox ID="txtSinopsis" runat="server" Height="138px" Width="352px"></asp:TextBox>
                     </td>
                     <td class="auto-style36">
-                        &nbsp;</td>
+                        <asp:FileUpload ID="FileUpload1" accept =" .jpg" runat="server" />
+                    </td>
                 </tr>
 
 

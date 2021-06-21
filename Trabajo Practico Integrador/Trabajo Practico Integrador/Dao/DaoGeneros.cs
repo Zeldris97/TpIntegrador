@@ -16,7 +16,7 @@ namespace Dao
         public Generos getGenero(Generos gen)
         {
             DataTable tabla = ds.ObtenerTabla("Generos", "Select * from Geneross where ID=" + gen.getId());
-            gen.setIdGenero(Convert.ToInt32(tabla.Rows[0][0].ToString()));
+            gen.setId(Convert.ToInt32(tabla.Rows[0][0].ToString()));
             gen.setNombre(tabla.Rows[0][1].ToString());
             return gen;
 
@@ -34,6 +34,41 @@ namespace Dao
             DataTable Tabla = ds.ObtenerTabla("Generos", "Select * from Generos");
             return Tabla;
         }
+
+        private void armarParametrosGenerosEliminar(ref SqlCommand comando, Generos Gen)
+        {
+            SqlParameter sqlParametros = new SqlParameter();
+            sqlParametros = comando.Parameters.Add("@IDGENEROS", SqlDbType.Int);
+            sqlParametros.Value = Gen.getId();
+        }
+
+        public int eliminarGenero(Generos Gen)
+        {
+            SqlCommand cmd = new SqlCommand();
+            armarParametrosGenerosEliminar(ref cmd, Gen);
+            return ds.EjecutarProcAlmacenado(cmd, "spEliminarGenero");
+
+        }
+
+        private void armarParametrosGenerosAgregar(ref SqlCommand comando, Generos Gen)
+        {
+            SqlParameter sqlParametros = new SqlParameter();
+            sqlParametros = comando.Parameters.Add("@IDGENEROS", SqlDbType.Int);
+            sqlParametros.Value = Gen.getId();
+            sqlParametros = comando.Parameters.Add("@NOMBREGENEROS", SqlDbType.VarChar);
+            sqlParametros.Value = Gen.getNombre();
+        }
+
+        public int agregarGenero(Generos Gen)
+        {
+            Gen.setId(ds.ObtenerMaximo("SELECT max(ID) FROM Generos") + 1);
+            SqlCommand cmd = new SqlCommand();
+            armarParametrosGenerosAgregar(ref cmd, Gen);
+            return ds.EjecutarProcAlmacenado(cmd, "spAgregarGenero");
+
+        }
+
+
 
     }
 }
