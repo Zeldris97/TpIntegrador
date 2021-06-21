@@ -22,7 +22,7 @@ namespace Dao
             usr.setApellido(tabla.Rows[0][3].ToString());
             usr.setEmail(tabla.Rows[0][4].ToString());
             usr.setUser(tabla.Rows[0][5].ToString());
-            usr.setContrasenia(tabla.Rows[0][6].ToString());
+            usr.set(tabla.Rows[0][6].ToString());
             usr.setAdmin(tabla.Rows[0][7].ToString());
             return usr;
 
@@ -58,8 +58,6 @@ namespace Dao
         private void armarParametrosUsuarioAgregar(ref SqlCommand comando,Usuario Usr)
         {
             SqlParameter sqlParametros = new SqlParameter();
-            sqlParametros = comando.Parameters.Add("@IDUSUARIO", SqlDbType.Int);
-            sqlParametros.Value = Usr.getId();
             sqlParametros = comando.Parameters.Add("@USUARIODNI", SqlDbType.Int);
             sqlParametros.Value = Usr.getDni();
             sqlParametros = comando.Parameters.Add("@NOMBREUSUARIO", SqlDbType.VarChar);

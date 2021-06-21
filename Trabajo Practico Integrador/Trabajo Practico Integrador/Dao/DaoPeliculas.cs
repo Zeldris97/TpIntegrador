@@ -29,7 +29,7 @@ namespace Dao
 
         public Boolean ExistePelicula(Peliculas peli)
         {
-            String consulta = "Select * from Peliculas where ID='" + peli.getId().ToString() + "'";
+            String consulta = "Select ID from Peliculas where Nombre='" + peli.getNombre() + "'";
             return ds.Existe(consulta);
 
         }
@@ -58,14 +58,12 @@ namespace Dao
         private void armarParametrosPeliculasAgregar(ref SqlCommand comando, Peliculas Peli)
         {
             SqlParameter sqlParametros = new SqlParameter();
-            sqlParametros = comando.Parameters.Add("@IDPELICULA", SqlDbType.Int);
-            sqlParametros.Value = Peli.getId();
             sqlParametros = comando.Parameters.Add("@NOMBREPELICULA", SqlDbType.VarChar);
             sqlParametros.Value = Peli.getNombre();
             sqlParametros = comando.Parameters.Add("@IDGENERO", SqlDbType.Int);
             sqlParametros.Value = Peli.getIdGenero();
             sqlParametros = comando.Parameters.Add("@IDCATEGORIA", SqlDbType.Int);
-            sqlParametros.Value = Peli.getIdCategorias();
+            sqlParametros.Value = Peli.getCategorias();
             sqlParametros = comando.Parameters.Add("@ANIOPELICULA", SqlDbType.Int);
             sqlParametros.Value = Peli.getAnio();
             sqlParametros = comando.Parameters.Add("@SINOPSISPELICULA", SqlDbType.VarChar);

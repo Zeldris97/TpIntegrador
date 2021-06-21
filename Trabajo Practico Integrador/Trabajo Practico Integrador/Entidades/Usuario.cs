@@ -14,7 +14,8 @@ namespace Entidades
         private String Apellido;
         private String Email;
         private String User;
-        private String Contrasenia;
+        private String Contraseña;
+        private bool Admin;
 
         public Usuario()
         { }
@@ -75,15 +76,25 @@ namespace Entidades
         {
             User = s;
         }
+     
         public String getContrasenia()
         {
-            return Contrasenia;
+            return Contraseña;
         }
 
-        public void setContrasenia(String s)
+        public void setAdmin(bool s)
         {
-            Contrasenia = s;
+            Admin = s;
         }
+        public void setContraseña(string s)
+        {
+            Contraseña = s;
+        }
+        public bool getAdmin()
+        {
+            return Admin;
+        }
+
 
     }
 }

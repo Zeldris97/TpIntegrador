@@ -1,0 +1,110 @@
+{
+  "version": 3,
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "Dao/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "Entidades": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Dao.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Dao.dll": {}
+        }
+      },
+      "Entidades/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/Entidades.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Entidades.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Dao/1.0.0": {
+      "type": "project",
+      "path": "../Dao/Dao.csproj",
+      "msbuildProject": "../Dao/Dao.csproj"
+    },
+    "Entidades/1.0.0": {
+      "type": "project",
+      "path": "../Entidades/Entidades.csproj",
+      "msbuildProject": "../Entidades/Entidades.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    ".NETCoreApp,Version=v3.1": [
+      "Dao >= 1.0.0",
+      "Entidades >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\Agustin\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\Agustin\\TpIntegrador\\Trabajo Practico Integrador\\Trabajo Practico Integrador\\Negocio\\Negocio.csproj",
+      "projectName": "Negocio",
+      "projectPath": "C:\\Users\\Agustin\\TpIntegrador\\Trabajo Practico Integrador\\Trabajo Practico Integrador\\Negocio\\Negocio.csproj",
+      "packagesPath": "C:\\Users\\Agustin\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Agustin\\TpIntegrador\\Trabajo Practico Integrador\\Trabajo Practico Integrador\\Negocio\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\Agustin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "netcoreapp3.1"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "projectReferences": {
+            "C:\\Users\\Agustin\\TpIntegrador\\Trabajo Practico Integrador\\Trabajo Practico Integrador\\Dao\\Dao.csproj": {
+              "projectPath": "C:\\Users\\Agustin\\TpIntegrador\\Trabajo Practico Integrador\\Trabajo Practico Integrador\\Dao\\Dao.csproj"
+            },
+            "C:\\Users\\Agustin\\TpIntegrador\\Trabajo Practico Integrador\\Trabajo Practico Integrador\\Entidades\\Entidades.csproj": {
+              "projectPath": "C:\\Users\\Agustin\\TpIntegrador\\Trabajo Practico Integrador\\Trabajo Practico Integrador\\Entidades\\Entidades.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "netcoreapp3.1": {
+        "targetAlias": "netcoreapp3.1",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}
