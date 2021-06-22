@@ -1,4 +1,4 @@
-CREATE DATABASE OscarWinners
+ï»¿CREATE DATABASE OscarWinners
 go
 USE OscarWinners
 go
@@ -18,7 +18,7 @@ ID int primary key identity (1,1) not null,
 Nombre Varchar (100) not null,
 IdGenero smallint not null foreign key references Generos (ID),
 IdCategorias smallint not null foreign key references Categorias (ID),
-Año Bigint not null,
+AÃ±o Bigint not null,
 Sinopsis Text not null,
 Imagen varchar (50) null
 )
@@ -30,7 +30,7 @@ Nombre Varchar (50) not null,
 Apellido varchar (50) null,
 Email Varchar (50) not null,
 Usuario Varchar (50) not null,
-Contraseña Varchar (50) not null,
+ContraseÃ±a Varchar (50) not null,
 )
 
 ALTER TABLE Peliculas
@@ -45,7 +45,7 @@ IdUsuario int foreign key references Usuario (ID),
 IdPelicula int foreign key references Peliculas (ID)
 )
 
-ALTER TABLE Peliculas add constraint CHK_año check (Año > 1928 and año < YEAR (GETDATE()))
+ALTER TABLE Peliculas add constraint CHK_aÃ±o check (AÃ±o > 1928 and aÃ±o < YEAR (GETDATE()))
 
 ALTER TABLE Usuario 
 ADD administrador bit not null default (0)
@@ -68,19 +68,19 @@ ADD administrador bit not null default (0)
 	 INSERT INTO Generos(Nombre) VALUES ('Terror')
 	 INSERT INTO Generos(Nombre) VALUES ('Musical')
 	 INSERT INTO Generos(Nombre) VALUES ('Suspenso')
-	 INSERT INTO Generos(Nombre) VALUES ('Ciencia ficción')
-	 INSERT INTO Generos(Nombre) VALUES ('Bélica')
+	 INSERT INTO Generos(Nombre) VALUES ('Ciencia ficciÃ³n')
+	 INSERT INTO Generos(Nombre) VALUES ('BÃ©lica')
 	 INSERT INTO Generos(Nombre) VALUES ('Western')
 
 
-	 INSERT INTO Usuario (Nombre, Apellido, Email,Usuario,Contraseña,administrador) VALUES ('Agustin', 'Robles', 'agus123@gmail.com', 'Agustin', '1234', 1)
+	 INSERT INTO Usuario (Nombre, Apellido, Email,Usuario,ContraseÃ±a,administrador) VALUES ('Agustin', 'Robles', 'agus123@gmail.com', 'Agustin', '1234', 1)
 
 	 --STORED PROCESS--
 
 	 CREATE PROCEDURE spAgregarPelicula (
 @NOMBREPELICULA varchar,
 @SINOPSIS text,
-@AÑO bigint,
+@AÃ‘O bigint,
 @IDGENERO int,
 @IDCATEGORIA int,
 @IDIMAGEN varchar
@@ -88,7 +88,7 @@ ADD administrador bit not null default (0)
 
 AS 
 BEGIN 
-     INSERT INTO Peliculas (Nombre, Sinopsis,Año,IdGenero,IdCategorias,Imagen) VALUES (@NOMBREPELICULA, @SINOPSIS, @AÑO, @IDGENERO,@IDCATEGORIA,@IDIMAGEN)
+     INSERT INTO Peliculas (Nombre, Sinopsis,AÃ±o,IdGenero,IdCategorias,Imagen) VALUES (@NOMBREPELICULA, @SINOPSIS, @AÃ‘O, @IDGENERO,@IDCATEGORIA,@IDIMAGEN)
 	 END
 
 
@@ -100,3 +100,6 @@ BEGIN
 	 BEGIN 
 	 DELETE FROM Peliculas where ID = @IDPELICULA
 	 END
+
+
+EXEC spAgregarPelicula Titanic,  'La trama, una epopeya romÃ¡ntica,3â€‹4â€‹ relata la relaciÃ³n de Jack Dawson y Rose DeWitt Bukater, dos jÃ³venes que se conocen y se enamoran a bordo del transatlÃ¡ntico RMS Titanic en su viaje inaugural desde Southampton (Inglaterra) a Nueva York (EE. UU.) en abril de 1912', 1997, 4,1, TITANIC

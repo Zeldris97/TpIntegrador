@@ -97,6 +97,7 @@
             <asp:Label ID="lblTitulo" runat="server" Font-Bold="True" Font-Size="X-Large" Text="Agregar Pelicula"></asp:Label>
             <br />
             <br />
+            <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <table class="auto-style5">
                 <tr>
