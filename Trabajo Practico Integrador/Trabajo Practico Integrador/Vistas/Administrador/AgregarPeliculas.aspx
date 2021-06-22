@@ -115,7 +115,7 @@
                         </asp:DropDownList>
                     </td>
                     <td class="auto-style39">
-                        <asp:RequiredFieldValidator ID="rfvDesc" runat="server" ControlToValidate="txbDesc" ErrorMessage="Ingrese una descripcion" ForeColor="Red" ValidationGroup="1">*</asp:RequiredFieldValidator>
+                        <asp:RequiredFieldValidator ID="rfvDesc" runat="server" ControlToValidate="ddlGenero" ErrorMessage="Seleccione un genero" ForeColor="Red" ValidationGroup="1">*</asp:RequiredFieldValidator>
                         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:OscarWinnersConnectionString %>" SelectCommand="SELECT [ID], [Nombre] FROM [Generos]"></asp:SqlDataSource>
                     </td>
                 </tr>
@@ -126,17 +126,20 @@
                     </td>
                     <td class="auto-style24">
                         <asp:RequiredFieldValidator ID="rfvPorv" runat="server" ControlToValidate="ddlProv" ErrorMessage="Seleccione una Provincia" ForeColor="Red" InitialValue="999" ValidationGroup="1">*</asp:RequiredFieldValidator>
+                        <br />
+                        <br />
+                        <asp:RegularExpressionValidator ID="reAño" runat="server" ControlToValidate="txtAño" ValidationExpression="^\d+$" ValidationGroup="1"></asp:RegularExpressionValidator>
                     </td>
                 </tr>
                 <tr>
                     <td class="auto-style25" style="text-align: left; white-space: normal; line-height: normal; vertical-align: text-bottom;">Categoria ganada:</td>
                     <td class="auto-style43">
-                        <asp:DropDownList ID="ddlCategoria" runat="server">
+                        <asp:DropDownList ID="ddlCategoria" runat="server" DataSourceID="SqlDataSource2" DataTextField="ID" DataValueField="Nombre">
                         </asp:DropDownList>
                     </td>
                     <td class="auto-style27">
-                        <asp:RequiredFieldValidator ID="rfvDir" runat="server" ControlToValidate="txbDesc" ErrorMessage="Ingrese una direccion" ForeColor="Red" ValidationGroup="1">*</asp:RequiredFieldValidator>
-                        <asp:SqlDataSource ID="SqlDataSource2" runat="server"></asp:SqlDataSource>
+                        <asp:RequiredFieldValidator ID="rfvDir" runat="server" ControlToValidate="ddlCategoria" ErrorMessage="Seleccione una categoria" ForeColor="Red" ValidationGroup="1">*</asp:RequiredFieldValidator>
+                        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:OscarWinnersConnectionString %>" SelectCommand="SELECT [ID], [Nombre] FROM [Categorias]"></asp:SqlDataSource>
                     </td>
                 </tr>
             
@@ -146,7 +149,8 @@
                         <asp:TextBox ID="txtSinopsis" runat="server" Height="138px" Width="352px"></asp:TextBox>
                     </td>
                     <td class="auto-style36">
-                        &nbsp;</td>
+                        <asp:RequiredFieldValidator ID="rfvSinopsis" runat="server" ControlToValidate="txtSinopsis" ValidationGroup="1"></asp:RequiredFieldValidator>
+                    </td>
                 </tr>
                   <tr>
                     <td class="auto-style34" style="text-align: left; white-space: normal; line-height: normal; vertical-align: text-bottom;">Imagen:</td>

@@ -40,14 +40,13 @@
                 <tr>
                     <td class="auto-style19">
                         &nbsp;&nbsp;&nbsp;
-                        <asp:LinkButton ID="btnLinkAgregar" runat="server">Agregar peliculas</asp:LinkButton>
+                        <asp:LinkButton ID="btnLinkAgregar" runat="server" OnClick="btnLinkAgregar_Click">Agregar peliculas</asp:LinkButton>
                     </td>
                     <td class="auto-style20">
-                        <asp:LinkButton ID="btnLinkListar" runat="server">Listar peliculas</asp:LinkButton>
+                        <asp:LinkButton ID="btnLinkListar" runat="server" OnClick="btnLinkListar_Click">Menu</asp:LinkButton>
                     </td>
                     <td class="auto-style22">
-                        <asp:LinkButton ID="LinkButton1" runat="server">Eliminar peliculas</asp:LinkButton>
-                    </td>
+                        &nbsp;</td>
                 </tr>
             </table>
             <br />
@@ -71,7 +70,7 @@
                             <asp:TextBox ID="txtIdSucursal" runat="server" CssClass="auto-style2" ValidationGroup="1" Width="334px"></asp:TextBox>
                         </td>
                         <td>
-                            <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" ValidationGroup="1" />
+                            <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" ValidationGroup="1" OnClick="btnEliminar_Click" OnClientClick="return confirm(&quot;¿Seguro que desea eliminar esta pelicula?&quot;)" />
                         </td>
                     </tr>
                 </table>

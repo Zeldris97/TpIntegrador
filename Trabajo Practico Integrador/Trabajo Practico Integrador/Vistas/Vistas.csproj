@@ -70,7 +70,6 @@
     <Content Include="Administrador\AccesoAdministrador.aspx" />
     <Content Include="Administrador\AgregarPeliculas.aspx" />
     <Content Include="Administrador\EliminarPelicula.aspx" />
-    <Content Include="Administrador\WebForm1.aspx" />
     <Content Include="Usuario\Acceso usuario.aspx" />
     <Content Include="Usuario\ListaPeliculas.aspx" />
     <Content Include="Administrador\MenuAdministrador.aspx" />
@@ -101,13 +100,6 @@
     </Compile>
     <Compile Include="Administrador\EliminarPelicula.aspx.designer.cs">
       <DependentUpon>EliminarPelicula.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Administrador\WebForm1.aspx.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Administrador\WebForm1.aspx.designer.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
     <Compile Include="Usuario\Acceso usuario.aspx.cs">
       <DependentUpon>Acceso usuario.aspx</DependentUpon>

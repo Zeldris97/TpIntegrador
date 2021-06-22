@@ -9,10 +9,10 @@ using System.Data;
 using Negocio;
 using Entidades;
 
-namespace Vistas
+namespace Vistas.Administrador
 {
    
-    public class AccesoAdministrador : System.Web.UI.Page
+    public partial class AccesoAdministrador : System.Web.UI.Page
     {
         
 
@@ -39,6 +39,8 @@ namespace Vistas
                 Response.Write("El administrador no existe");
 
             }
+
+            LimpiarCampos();
         }
 
             public void LimpiarCampos()

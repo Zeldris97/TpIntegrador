@@ -36,6 +36,9 @@ Contraseña Varchar (50) not null,
 ALTER TABLE Peliculas
 add unique (Nombre)
 
+ALTER TABLE Usuario
+add unique (Usuario)
+
 CREATE TABLE VerDespues (
 ID int primary key identity (1,1) not null,
 IdUsuario int foreign key references Usuario (ID),
@@ -48,31 +51,9 @@ ALTER TABLE Usuario
 ADD administrador bit not null default (0)
 
 
---El procedimiento esta escrito pero todavia no lo cree. Primero quiero ver si puedo agregar imagenes con el control FILEUPLOAD
-
-CREATE PROCEDURE spAgregarPelicula (
-@NOMBREPELICULA varchar,
-@SINOPSIS text,
-@AÑO bigint,
-@IDGENERO int,
-@IDCATEGORIA int
---agregar imagen antes de ejecutar
-)
-
-AS 
-BEGIN 
-     INSERT INTO Peliculas (Nombre, Sinopsis,Año,IdGenero,IdCategorias) VALUES (@NOMBREPELICULA, @SINOPSIS, @AÑO, @IDGENERO,@IDCATEGORIA)
-	 END
 
 
 
-	 CREATE PROCEDURE spEliminarPelicula (
-	 @IDPELICULA INT
-	 )
-	 AS
-	 BEGIN 
-	 DELETE FROM Peliculas where ID = @IDPELICULA
-	 END
 
 	 INSERT INTO Categorias (Nombre) VALUES ('Mejor pelicula')
 	 INSERT INTO Categorias (Nombre) VALUES ('Mejor director')
@@ -90,3 +71,32 @@ BEGIN
 	 INSERT INTO Generos(Nombre) VALUES ('Ciencia ficción')
 	 INSERT INTO Generos(Nombre) VALUES ('Bélica')
 	 INSERT INTO Generos(Nombre) VALUES ('Western')
+
+
+	 INSERT INTO Usuario (Nombre, Apellido, Email,Usuario,Contraseña,administrador) VALUES ('Agustin', 'Robles', 'agus123@gmail.com', 'Agustin', '1234', 1)
+
+	 --STORED PROCESS--
+
+	 CREATE PROCEDURE spAgregarPelicula (
+@NOMBREPELICULA varchar,
+@SINOPSIS text,
+@AÑO bigint,
+@IDGENERO int,
+@IDCATEGORIA int,
+@IDIMAGEN varchar
+)
+
+AS 
+BEGIN 
+     INSERT INTO Peliculas (Nombre, Sinopsis,Año,IdGenero,IdCategorias,Imagen) VALUES (@NOMBREPELICULA, @SINOPSIS, @AÑO, @IDGENERO,@IDCATEGORIA,@IDIMAGEN)
+	 END
+
+
+
+	 CREATE PROCEDURE spEliminarPelicula (
+	 @IDPELICULA INT
+	 )
+	 AS
+	 BEGIN 
+	 DELETE FROM Peliculas where ID = @IDPELICULA
+	 END
