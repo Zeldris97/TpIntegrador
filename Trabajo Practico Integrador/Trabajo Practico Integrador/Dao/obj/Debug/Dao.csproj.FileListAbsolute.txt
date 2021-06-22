@@ -1,2 +1,11 @@
 C:\Users\Agustin\Desktop\Utn\Programacion 3\Tp Integrador version 1\Trabajo Practico Integrador\Dao\obj\Debug\Dao.csprojAssemblyReference.cache
 C:\Users\Agustin\Desktop\Utn\Programacion 3\Tp Integrador version 1\Trabajo Practico Integrador\Dao\obj\Debug\Dao.csproj.CoreCompileInputs.cache
+C:\Users\Agustin\TpIntegrador\Trabajo Practico Integrador\Trabajo Practico Integrador\Dao\obj\Debug\Dao.csprojAssemblyReference.cache
+C:\Users\Agustin\TpIntegrador\Trabajo Practico Integrador\Trabajo Practico Integrador\Dao\obj\Debug\Dao.csproj.CoreCompileInputs.cache
+C:\Users\Agustin\TpIntegrador\Trabajo Practico Integrador\Trabajo Practico Integrador\Dao\bin\Debug\Dao.dll
+C:\Users\Agustin\TpIntegrador\Trabajo Practico Integrador\Trabajo Practico Integrador\Dao\bin\Debug\Dao.pdb
+C:\Users\Agustin\TpIntegrador\Trabajo Practico Integrador\Trabajo Practico Integrador\Dao\bin\Debug\Entidades.dll
+C:\Users\Agustin\TpIntegrador\Trabajo Practico Integrador\Trabajo Practico Integrador\Dao\bin\Debug\Entidades.pdb
+C:\Users\Agustin\TpIntegrador\Trabajo Practico Integrador\Trabajo Practico Integrador\Dao\obj\Debug\Dao.csproj.CopyComplete
+C:\Users\Agustin\TpIntegrador\Trabajo Practico Integrador\Trabajo Practico Integrador\Dao\obj\Debug\Dao.dll
+C:\Users\Agustin\TpIntegrador\Trabajo Practico Integrador\Trabajo Practico Integrador\Dao\obj\Debug\Dao.pdb

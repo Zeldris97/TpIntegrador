@@ -22,14 +22,13 @@ namespace Dao
             usr.setApellido(tabla.Rows[0][3].ToString());
             usr.setEmail(tabla.Rows[0][4].ToString());
             usr.setUser(tabla.Rows[0][5].ToString());
-            usr.set(tabla.Rows[0][6].ToString());
-            usr.setAdmin(tabla.Rows[0][7].ToString());
+            usr.setContraseña (tabla.Rows[0][6].ToString());
             return usr;
 
         }
         public Boolean ExisteUsuario(Usuario usr)
         {
-            String consulta = "Select * from Usuario where ID='" + usr.getId().ToString() + "'";
+            String consulta = "Select * from Usuario where Usuario= '" + usr.getUser() + "' and Contraseña = '" + usr.getContrasenia() + "' and administrador =1";
             return ds.Existe(consulta);
 
         }

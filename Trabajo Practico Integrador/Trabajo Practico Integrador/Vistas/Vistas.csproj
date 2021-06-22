@@ -7,7 +7,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{BAB0C183-0C2B-49DF-94E7-A34A63EEDEE0}</ProjectGuid>
+    <ProjectGuid>{4A29E0CF-E858-4226-B29E-CF9B38F3983A}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -70,14 +70,15 @@
     <Content Include="Administrador\AccesoAdministrador.aspx" />
     <Content Include="Administrador\AgregarPeliculas.aspx" />
     <Content Include="Administrador\EliminarPelicula.aspx" />
-    <Content Include="Estilos.css" />
+    <Content Include="Administrador\WebForm1.aspx" />
+    <Content Include="Usuario\Acceso usuario.aspx" />
     <Content Include="Usuario\ListaPeliculas.aspx" />
+    <Content Include="Administrador\MenuAdministrador.aspx" />
+    <Content Include="Usuario\MenuUsuario.aspx" />
     <Content Include="Usuario\MostrarPelicula.aspx" />
     <Content Include="Usuario\RegistroUsuario.aspx" />
     <Content Include="Usuario\VerDespues.aspx" />
     <Content Include="Web.config" />
-    <Content Include="Usuario\Acceso usuario.aspx" />
-    <Content Include="Usuario\MenuUsuario.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Administrador\AccesoAdministrador.aspx.cs">
@@ -101,12 +102,40 @@
     <Compile Include="Administrador\EliminarPelicula.aspx.designer.cs">
       <DependentUpon>EliminarPelicula.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Administrador\WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administrador\WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Usuario\Acceso usuario.aspx.cs">
+      <DependentUpon>Acceso usuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Usuario\Acceso usuario.aspx.designer.cs">
+      <DependentUpon>Acceso usuario.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Usuario\ListaPeliculas.aspx.cs">
       <DependentUpon>ListaPeliculas.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Usuario\ListaPeliculas.aspx.designer.cs">
       <DependentUpon>ListaPeliculas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administrador\MenuAdministrador.aspx.cs">
+      <DependentUpon>MenuAdministrador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administrador\MenuAdministrador.aspx.designer.cs">
+      <DependentUpon>MenuAdministrador.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Usuario\MenuUsuario.aspx.cs">
+      <DependentUpon>MenuUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Usuario\MenuUsuario.aspx.designer.cs">
+      <DependentUpon>MenuUsuario.aspx</DependentUpon>
     </Compile>
     <Compile Include="Usuario\MostrarPelicula.aspx.cs">
       <DependentUpon>MostrarPelicula.aspx</DependentUpon>
@@ -116,20 +145,6 @@
       <DependentUpon>MostrarPelicula.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Usuario\Acceso usuario.aspx.cs">
-      <DependentUpon>Acceso usuario.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Usuario\Acceso usuario.aspx.designer.cs">
-      <DependentUpon>Acceso usuario.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Usuario\MenuUsuario.aspx.cs">
-      <DependentUpon>MenuUsuario.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Usuario\MenuUsuario.aspx.designer.cs">
-      <DependentUpon>MenuUsuario.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Usuario\RegistroUsuario.aspx.cs">
       <DependentUpon>RegistroUsuario.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -160,7 +175,7 @@
       <Name>Entidades</Name>
     </ProjectReference>
     <ProjectReference Include="..\Negocio\Negocio.csproj">
-      <Project>{f26408bb-cee0-4d30-9235-f54be1fba7ae}</Project>
+      <Project>{459dfb6a-f679-42fe-9a91-afe68beb436a}</Project>
       <Name>Negocio</Name>
     </ProjectReference>
   </ItemGroup>
@@ -177,7 +192,7 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>65161</DevelopmentServerPort>
+          <DevelopmentServerPort>51832</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>https://localhost:44339/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>

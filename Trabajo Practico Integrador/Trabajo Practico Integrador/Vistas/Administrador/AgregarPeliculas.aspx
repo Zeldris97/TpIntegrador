@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AgregarPeliculas.aspx.cs" Inherits="Vistas.AgregarPeliculas" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AgregarPeliculas.aspx.cs" Inherits="Vistas.Administrador.AgregarPeliculas" %>
 
 <!DOCTYPE html>
 
@@ -10,14 +10,6 @@
             width: 984px;
             margin-left: 54px;
             height: 276px;
-        }
-        .auto-style7 {
-            width: 135px;
-            height: 41px;
-        }
-        .auto-style9 {
-            width: 248px;
-            height: 41px;
         }
         .auto-style22 {
             width: 135px;
@@ -75,13 +67,12 @@
             width: 230px;
             height: 42px;
         }
-        .auto-style44 {
-            width: 230px;
-            height: 41px;
-        }
         .auto-style45 {
             width: 230px;
             height: 35px;
+        }
+        .auto-style46 {
+            margin-top: 0px;
         }
     </style>
 </head>
@@ -111,7 +102,7 @@
                 <tr>
                     <td class="auto-style28" style="text-align: left; line-height: -12px;">Nombre pelicula:</td>
                     <td class="auto-style40">
-                        <asp:TextBox ID="txbSucNom" runat="server" Width="278px"></asp:TextBox>
+                        <asp:TextBox ID="txtPelNom" runat="server" Width="278px"></asp:TextBox>
                     </td>
                     <td class="auto-style30">
                         <asp:RequiredFieldValidator ID="rfvSuc" runat="server" ControlToValidate="txbSucNom" ErrorMessage="Ingrese un nombre de sucursal" ForeColor="Red" ValidationGroup="1">*</asp:RequiredFieldValidator>
@@ -120,54 +111,65 @@
                 <tr>
                     <td class="auto-style37" style="text-align: left; white-space: normal; line-height: normal; vertical-align: text-bottom;">Genero:</td>
                     <td class="auto-style41">
-                        <asp:TextBox ID="txbDesc" runat="server" Height="50px" Width="276px"></asp:TextBox>
+                        <asp:DropDownList ID="ddlGenero" runat="server" DataSourceID="SqlDataSource1" DataTextField="ID" DataValueField="Nombre">
+                        </asp:DropDownList>
                     </td>
                     <td class="auto-style39">
                         <asp:RequiredFieldValidator ID="rfvDesc" runat="server" ControlToValidate="txbDesc" ErrorMessage="Ingrese una descripcion" ForeColor="Red" ValidationGroup="1">*</asp:RequiredFieldValidator>
+                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:OscarWinnersConnectionString %>" SelectCommand="SELECT [ID], [Nombre] FROM [Generos]"></asp:SqlDataSource>
                     </td>
                 </tr>
                 <tr>
                     <td class="auto-style22" style="text-align: left; white-space: normal; line-height: normal; vertical-align: text-bottom;">Año de premio:</td>
                     <td class="auto-style42">
-                        <asp:DropDownList ID="ddlProv" runat="server" AppendDataBoundItems="True" Height="18px" Width="283px">
-                            <asp:ListItem Selected="True" Value="999">Seleccionar año</asp:ListItem>
-                        </asp:DropDownList>
+                        <asp:TextBox ID="txtAño" runat="server"></asp:TextBox>
                     </td>
                     <td class="auto-style24">
                         <asp:RequiredFieldValidator ID="rfvPorv" runat="server" ControlToValidate="ddlProv" ErrorMessage="Seleccione una Provincia" ForeColor="Red" InitialValue="999" ValidationGroup="1">*</asp:RequiredFieldValidator>
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style25" style="text-align: left; white-space: normal; line-height: normal; vertical-align: text-bottom;">Director:</td>
+                    <td class="auto-style25" style="text-align: left; white-space: normal; line-height: normal; vertical-align: text-bottom;">Categoria ganada:</td>
                     <td class="auto-style43">
-                        <asp:TextBox ID="txbDir" runat="server" Width="274px"></asp:TextBox>
+                        <asp:DropDownList ID="ddlCategoria" runat="server">
+                        </asp:DropDownList>
                     </td>
                     <td class="auto-style27">
                         <asp:RequiredFieldValidator ID="rfvDir" runat="server" ControlToValidate="txbDesc" ErrorMessage="Ingrese una direccion" ForeColor="Red" ValidationGroup="1">*</asp:RequiredFieldValidator>
+                        <asp:SqlDataSource ID="SqlDataSource2" runat="server"></asp:SqlDataSource>
                     </td>
                 </tr>
-                <tr>
-                    <td class="auto-style7" style="text-align: left; white-space: normal; line-height: normal; vertical-align: text-bottom;">Productor:</td>
-                    <td class="auto-style44">
-                        <asp:TextBox ID="txtProductor" runat="server"></asp:TextBox>
-                    </td>
-                    <td class="auto-style9"></td>
-                </tr>
+            
                 <tr>
                     <td class="auto-style34" style="text-align: left; white-space: normal; line-height: normal; vertical-align: text-bottom;">Sinopsis:</td>
                     <td class="auto-style45">
                         <asp:TextBox ID="txtSinopsis" runat="server" Height="138px" Width="352px"></asp:TextBox>
                     </td>
                     <td class="auto-style36">
-                        <asp:FileUpload ID="FileUpload1" accept =" .jpg" runat="server" />
+                        &nbsp;</td>
+                </tr>
+                  <tr>
+                    <td class="auto-style34" style="text-align: left; white-space: normal; line-height: normal; vertical-align: text-bottom;">Imagen:</td>
+                    <td class="auto-style45">
+                        
+                        <asp:FileUpload ID="FU1" accept =".jpg" runat="server" CssClass="auto-style46" />
+                        
                     </td>
+                    <td class="auto-style36">
+                        &nbsp;</td>
                 </tr>
 
 
             </table>
         </div>
                         <asp:ValidationSummary ID="vserrores" runat="server" ForeColor="Red" Width="281px" ValidationGroup="1" />
-                        <asp:Button ID="btnAgregar" runat="server" Text="Agregar" ValidationGroup="1" />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:Button ID="btnAceptar" runat="server" OnClick="btnAceptar_Click" Text="Aceptar" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <br />
+        <p>
+            &nbsp;</p>
     </form>
 </body>
 </html>
+

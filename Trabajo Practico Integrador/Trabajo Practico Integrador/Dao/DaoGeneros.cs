@@ -16,7 +16,7 @@ namespace Dao
         public Generos getGenero(Generos gen)
         {
             DataTable tabla = ds.ObtenerTabla("Generos", "Select * from Geneross where ID=" + gen.getId());
-            gen.setId(Convert.ToInt32(tabla.Rows[0][0].ToString()));
+            gen.setIdGenero(Convert.ToInt32(tabla.Rows[0][0].ToString()));
             gen.setNombre(tabla.Rows[0][1].ToString());
             return gen;
 
@@ -61,7 +61,7 @@ namespace Dao
 
         public int agregarGenero(Generos Gen)
         {
-            Gen.setId(ds.ObtenerMaximo("SELECT max(ID) FROM Generos") + 1);
+            Gen.setIdGenero(ds.ObtenerMaximo("SELECT max(ID) FROM Generos") + 1);
             SqlCommand cmd = new SqlCommand();
             armarParametrosGenerosAgregar(ref cmd, Gen);
             return ds.EjecutarProcAlmacenado(cmd, "spAgregarGenero");
