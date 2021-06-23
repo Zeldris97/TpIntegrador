@@ -1,2 +1,0 @@
-C:\Users\Agustin\TpIntegrador\Trabajo Practico Integrador\Trabajo Practico Integrador\Vistas\obj\Debug\Vistas.csprojAssemblyReference.cache
-C:\Users\Agustin\TpIntegrador\Trabajo Practico Integrador\Trabajo Practico Integrador\Vistas\obj\Debug\Vistas.csproj.CoreCompileInputs.cache
