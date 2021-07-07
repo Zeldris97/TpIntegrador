@@ -103,3 +103,25 @@ BEGIN
 
 
 EXEC spAgregarPelicula Titanic,  'La trama, una epopeya romántica,3​4​ relata la relación de Jack Dawson y Rose DeWitt Bukater, dos jóvenes que se conocen y se enamoran a bordo del transatlántico RMS Titanic en su viaje inaugural desde Southampton (Inglaterra) a Nueva York (EE. UU.) en abril de 1912', 1997, 4,1, TITANIC
+
+CREATE PROCEDURE sp_AgregarUsuario (
+@NOMBREUSUARIO varchar (50),
+@APELLIDOUSUARIO varchar (50),
+@EMAILUSUARIO varchar (50),
+@USERNAME varchar (50),
+@CONTRASEÑAUSUARIO varchar (50),
+@ADMINUSUARIO bit
+)
+
+as
+begin
+INSERT INTO Usuario (Nombre, Apellido, Email,Usuario,Contraseña,administrador) values (@NOMBREUSUARIO, @APELLIDOUSUARIO,@EMAILUSUARIO,@USERNAME,@CONTRASEÑAUSUARIO,@ADMINUSUARIO)
+END
+
+CREATE PROCEDURE sp_BuscarPeliculaPorNombre(
+@NOMBREPELICULA varchar (100)
+)
+AS
+BEGIN
+select * from Peliculas where Nombre = @NOMBREPELICULA
+End

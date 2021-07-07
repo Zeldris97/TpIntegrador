@@ -8,7 +8,6 @@ C:\Users\Agustin\Desktop\Utn\Programacion 3\Tp Integrador version 1\Trabajo Prac
 C:\Users\Agustin\Desktop\Utn\Programacion 3\Tp Integrador version 1\Trabajo Practico Integrador\Entidades\obj\Debug\Entidades.pdb
 C:\Users\Agustin\TpIntegrador\Trabajo Practico Integrador\Trabajo Practico Integrador\Entidades\bin\Debug\Entidades.dll
 C:\Users\Agustin\TpIntegrador\Trabajo Practico Integrador\Trabajo Practico Integrador\Entidades\bin\Debug\Entidades.pdb
-C:\Users\Agustin\TpIntegrador\Trabajo Practico Integrador\Trabajo Practico Integrador\Entidades\obj\Debug\Entidades.csprojAssemblyReference.cache
 C:\Users\Agustin\TpIntegrador\Trabajo Practico Integrador\Trabajo Practico Integrador\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
 C:\Users\Agustin\TpIntegrador\Trabajo Practico Integrador\Trabajo Practico Integrador\Entidades\obj\Debug\Entidades.dll
 C:\Users\Agustin\TpIntegrador\Trabajo Practico Integrador\Trabajo Practico Integrador\Entidades\obj\Debug\Entidades.pdb
@@ -24,3 +23,4 @@ C:\Users\22cop\Downloads\TpIntegrador-master\TpIntegrador\Trabajo Practico Integ
 C:\Users\22cop\Downloads\TpIntegrador-master\TpIntegrador\Trabajo Practico Integrador\Trabajo Practico Integrador\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
 C:\Users\22cop\Downloads\TpIntegrador-master\TpIntegrador\Trabajo Practico Integrador\Trabajo Practico Integrador\Entidades\obj\Debug\Entidades.dll
 C:\Users\22cop\Downloads\TpIntegrador-master\TpIntegrador\Trabajo Practico Integrador\Trabajo Practico Integrador\Entidades\obj\Debug\Entidades.pdb
+C:\Users\Agustin\TpIntegrador\Trabajo Practico Integrador\Trabajo Practico Integrador\Entidades\obj\Debug\Entidades.csproj.AssemblyReference.cache

@@ -162,11 +162,11 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Trabajo Practico Integrador\Trabajo Practico Integrador\Entidades\Entidades.csproj">
+    <ProjectReference Include="..\Trabajo Practico Integrador\Entidades\Entidades.csproj">
       <Project>{7150323e-2901-49b8-acd2-e9b6b86eb8b4}</Project>
       <Name>Entidades</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Trabajo Practico Integrador\Trabajo Practico Integrador\Negocio\Negocio.csproj">
+    <ProjectReference Include="..\Trabajo Practico Integrador\Negocio\Negocio.csproj">
       <Project>{459dfb6a-f679-42fe-9a91-afe68beb436a}</Project>
       <Name>Negocio</Name>
     </ProjectReference>

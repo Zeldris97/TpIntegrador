@@ -130,3 +130,5 @@ C:\Users\22cop\Downloads\TpIntegrador-master\TpIntegrador\Trabajo Practico Integ
 C:\Users\22cop\Downloads\TpIntegrador-master\TpIntegrador\Trabajo Practico Integrador\Trabajo Practico Integrador\Vistas\obj\Debug\Vistas.csproj.CopyComplete
 C:\Users\22cop\Downloads\TpIntegrador-master\TpIntegrador\Trabajo Practico Integrador\Trabajo Practico Integrador\Vistas\obj\Debug\Vistas.dll
 C:\Users\22cop\Downloads\TpIntegrador-master\TpIntegrador\Trabajo Practico Integrador\Trabajo Practico Integrador\Vistas\obj\Debug\Vistas.pdb
+C:\Users\Agustin\TpIntegrador\Trabajo Practico Integrador\Backup vistas\obj\Debug\Vistas.dll
+C:\Users\Agustin\TpIntegrador\Trabajo Practico Integrador\Backup vistas\obj\Debug\Vistas.pdb

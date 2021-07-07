@@ -11,6 +11,13 @@ namespace Vistas
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            Request.QueryString ["Nom"]
+        }
+
+        
+
+        protected System.Void SqlDataSource1_Selecting(System.Object sender, System.Web.UI.WebControls.SqlDataSourceSelectingEventArgs e)
+        {
 
         }
     }

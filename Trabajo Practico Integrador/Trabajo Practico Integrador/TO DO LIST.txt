@@ -1,0 +1,7 @@
+Agustin
+-Verificar que funcione FILEUPLOAD en agregarPeliculas
+-MenuUsuario: Response. write para enviar cada una de las busquedas (por categoria,nombre, etc)
+-MostrarPelicula: Un webform por cada busqueda. Un listview que funcione con procedimientos almacenados
+por cada busqueda y que el parametro lo saque de un requestQuery. Deberia funcionar.
+-Agregar el funcionamiento de los links buttons en esto y lo que hizo enzo. Verificar que todo ande.
+-Vuelve a pasar el error de que los .cs no me reconoce las librerias ni nada. No puedo verificar nada asi.

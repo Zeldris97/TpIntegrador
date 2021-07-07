@@ -82,5 +82,20 @@ namespace Dao
             return ds.EjecutarProcAlmacenado(cmd, "spAgregarPelicula");
 
         }
+        private void armarParametrosBuscarPorNombre(ref SqlCommand comando, Peliculas Peli)
+        {
+            SqlParameter sqlParametros = new SqlParameter();
+            sqlParametros = comando.Parameters.Add("@NOMBREPELICULA", SqlDbType.VarChar);
+            sqlParametros.Value = Peli.getNombre();
+        }
+
+        public int BuscarPorNombre(Peliculas Peli)
+        {
+            SqlCommand cmd = new SqlCommand();
+            armarParametrosBuscarPorNombre(ref cmd, Peli);
+            return ds.EjecutarProcAlmacenado(cmd, "spBuscarPeliculaPorNombre");
+
+        }
+
     }
 }

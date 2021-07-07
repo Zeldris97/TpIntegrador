@@ -72,8 +72,6 @@ namespace Dao
         private void armarParametrosUsuarioAgregar(ref SqlCommand comando,Usuario Usr)
         {
             SqlParameter sqlParametros = new SqlParameter();
-            sqlParametros = comando.Parameters.Add("@USUARIODNI", SqlDbType.Int);
-            sqlParametros.Value = Usr.getDni();
             sqlParametros = comando.Parameters.Add("@NOMBREUSUARIO", SqlDbType.VarChar);
             sqlParametros.Value = Usr.getNombre();
             sqlParametros = comando.Parameters.Add("@APELLIDOUSUARIO", SqlDbType.VarChar);
@@ -95,7 +93,7 @@ namespace Dao
             Usr.setId(ds.ObtenerMaximo("SELECT max(ID) FROM Usuario") + 1);
             SqlCommand cmd = new SqlCommand();
             armarParametrosUsuarioAgregar(ref cmd, Usr);
-            return ds.EjecutarProcAlmacenado(cmd, "spAgregarUsuario");
+            return ds.EjecutarProcAlmacenado(cmd, "sp_AgregarUsuario");
 
         }
 

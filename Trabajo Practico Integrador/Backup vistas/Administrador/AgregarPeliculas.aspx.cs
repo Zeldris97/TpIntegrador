@@ -28,7 +28,7 @@ namespace Vistas.Administrador
             if (agr)
             {
 
-                // FU1.SaveAs(Server.MapPath("~/ImagenesPeliculas/" + FU1.PostedFile.FileName));
+                FU1.SaveAs(Server.MapPath("~/ImagenesPeliculas/" + FU1.PostedFile.FileName));
                 lblAgregado.Text = "La pelicula se agrego con exito";
                 Response.Write("Se agrego la pelicula");
 
