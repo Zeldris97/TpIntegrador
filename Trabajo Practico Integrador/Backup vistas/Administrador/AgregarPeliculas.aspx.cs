@@ -40,6 +40,7 @@ namespace Vistas.Administrador
                 Response.Write("La pelicula ya existe");
             }
             LimpiarCampos();
+
         }
 
         public void LimpiarCampos()

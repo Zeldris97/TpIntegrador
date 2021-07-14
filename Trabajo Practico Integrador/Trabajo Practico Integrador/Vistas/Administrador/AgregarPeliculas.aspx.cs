@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Negocio;
 using Entidades;
+using System.IO;
 
 namespace Vistas.Administrador
 {
@@ -28,7 +29,9 @@ namespace Vistas.Administrador
             if (agr)
             {
 
-                // FU1.SaveAs(Server.MapPath("~/ImagenesPeliculas/" + FU1.PostedFile.FileName));
+                // FU1.SaveAs(Server.MapPath("ImagenesPeliculas//" + FU1.PostedFile.FileName));
+                string fileName = Path.Combine(Server.MapPath("~/ImagenesPeliculas"), FU1.FileName);
+                FU1.SaveAs(fileName);
                 lblAgregado.Text = "La pelicula se agrego con exito";
                 Response.Write("Se agrego la pelicula");
 

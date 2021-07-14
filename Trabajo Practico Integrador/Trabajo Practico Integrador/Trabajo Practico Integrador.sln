@@ -13,7 +13,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entidades", "Entidades\Enti
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Negocio", "Negocio\Negocio.csproj", "{459DFB6A-F679-42FE-9A91-AFE68BEB436A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vistas", "..\Backup vistas\Vistas.csproj", "{4A29E0CF-E858-4226-B29E-CF9B38F3983A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vistas", "Vistas\Vistas.csproj", "{4A29E0CF-E858-4226-B29E-CF9B38F3983A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
