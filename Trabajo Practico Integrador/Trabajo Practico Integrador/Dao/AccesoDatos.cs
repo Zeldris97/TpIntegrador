@@ -10,20 +10,15 @@ namespace Dao
 {
     class AccesoDatos
     {
-        private String RutaBD = "Data Source=localhost; Initial Catalog=OscarWinners; Integrated Security=True";
+        private String RutaBD = "Data Source=localhost\\SQLEXPRESS;Initial Catalog=OscarWinners;Integrated Security=True";
 
         private SqlConnection ObtenerConexion()
         {
             SqlConnection cn = new SqlConnection(RutaBD);
-            try
-            {
+           
                 cn.Open();
                 return cn;
-            }
-            catch (Exception ex)
-            {
-                return null;
-            }
+          
         }
 
         private SqlDataAdapter ObtenerAdaptador(String ConsultaSQL, SqlConnection cn)

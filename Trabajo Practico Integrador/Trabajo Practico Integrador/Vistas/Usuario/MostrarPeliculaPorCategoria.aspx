@@ -106,13 +106,13 @@
                     </li>
                 </SelectedItemTemplate>
             </asp:ListView>
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="Data Source=localhost\SQLEXPRESS;Initial Catalog=OscarWinners;Integrated Security=True" ProviderName="System.Data.SqlClient" SelectCommand="sp_BuscarPeliculaPorCategoria" SelectCommandType="StoredProcedure">
+                <SelectParameters>
+                    <asp:QueryStringParameter Name="CATEGORIA" QueryStringField="Cat" Type="String" />
+                </SelectParameters>
+            </asp:SqlDataSource>
             <br />
         </div>
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:OscarWinnersConnectionString %>" SelectCommand="sp_BuscarPeliculaPorCategoria" OnSelecting="SqlDataSource1_Selecting" SelectCommandType="StoredProcedure">
-            <SelectParameters>
-                <asp:QueryStringParameter Name="CATEGORIA" QueryStringField="Cat" Type="String" />
-            </SelectParameters>
-        </asp:SqlDataSource>
         <asp:LinkButton ID="btnLinkMenu" runat="server">Volver al menu</asp:LinkButton>
     </form>
 </body>

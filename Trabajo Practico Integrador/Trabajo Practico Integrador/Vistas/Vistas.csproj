@@ -70,6 +70,8 @@
     <Content Include="Administrador\AccesoAdministrador.aspx" />
     <Content Include="Administrador\AgregarPeliculas.aspx" />
     <Content Include="Administrador\EliminarPelicula.aspx" />
+    <Content Include="ImagenesPeliculas\el-padrino.jpg" />
+    <Content Include="ImagenesPeliculas\Titanic.jpg" />
     <Content Include="Usuario\Acceso usuario.aspx" />
     <Content Include="Usuario\ListaPeliculas.aspx" />
     <Content Include="Administrador\MenuAdministrador.aspx" />

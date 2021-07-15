@@ -126,6 +126,32 @@ BEGIN
 select * from Peliculas where Nombre = @NOMBREPELICULA
 End
 
+ALTER PROCEDURE sp_BuscarPeliculaPorNombre(
+@NOMBREPELICULA varchar (100)
+)
+AS
+BEGIN
+select P.Nombre, G.Nombre as 'Genero',C.Nombre as 'Categoria', P.Año, P.Sinopsis from Peliculas P
+inner join Categorias C on C.ID=P.IdCategorias
+inner join Generos G on G.ID= P.IdGenero
+where P.Nombre = @NOMBREPELICULA
+End
+
+ALTER PROCEDURE sp_BuscarPeliculaPorCategoria(
+@CATEGORIA varchar (100)
+)
+AS
+BEGIN
+select P.Nombre, G.Nombre as 'Genero',C.Nombre as 'Categoria', P.Año, P.Sinopsis from Peliculas P
+inner join Categorias C on C.ID=P.IdCategorias
+inner join Generos G on G.ID= P.IdGenero
+where C.Nombre = @CATEGORIA
+End
+
+
+
+
+
 CREATE PROCEDURE sp_BuscarPeliculaPorCategoria(
 @CATEGORIA varchar (100)
 )
@@ -146,10 +172,35 @@ inner join Generos G on G.ID = P.IdGenero
 where G.Nombre= @GENERO
 End
 
+
+ALTER PROCEDURE sp_BuscarPeliculaPorGenero(
+@GENERO varchar (100)
+)
+AS
+BEGIN
+select P.Nombre, G.Nombre as 'Genero',C.Nombre as 'Categoria', P.Año, P.Sinopsis from Peliculas P
+inner join Categorias C on C.ID=P.IdCategorias
+inner join Generos G on G.ID= P.IdGenero
+where G.Nombre= @GENERO
+End
+
+
 CREATE PROCEDURE sp_BuscarPeliculaPorAño(
 @AÑO BIGINT
 )
 AS
 BEGIN
 select * from Peliculas where Año = @AÑO
+End
+
+
+ALTER PROCEDURE sp_BuscarPeliculaPorAño(
+@AÑO bigint
+)
+AS
+BEGIN
+select P.Nombre, G.Nombre as 'Genero',C.Nombre as 'Categoria', P.Año, P.Sinopsis from Peliculas P
+inner join Categorias C on C.ID=P.IdCategorias
+inner join Generos G on G.ID= P.IdGenero
+where P.Año= @AÑO
 End

@@ -18,8 +18,6 @@ namespace Vistas
         protected void Page_Load(object sender, EventArgs e)
         {
             this.UnobtrusiveValidationMode = System.Web.UI.UnobtrusiveValidationMode.None;
-            Usr = (Entidades.Usuario)Session["DataUsuario"];
-            lblBienvenido.Text = "Bienvenido, " + Usr.getNombre() + "";
         }
 
         protected void btnLinkAccion_Click(object sender, EventArgs e)

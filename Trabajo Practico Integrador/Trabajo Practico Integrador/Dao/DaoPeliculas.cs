@@ -76,7 +76,7 @@ namespace Dao
 
         public int agregarPelicula(Peliculas Peli)
         {
-            Peli.setId(ds.ObtenerMaximo("SELECT max(ID) FROM Peliculas") + 1);
+          
             SqlCommand cmd = new SqlCommand();
             armarParametrosPeliculasAgregar(ref cmd, Peli);
             return ds.EjecutarProcAlmacenado(cmd, "spAgregarPelicula");
