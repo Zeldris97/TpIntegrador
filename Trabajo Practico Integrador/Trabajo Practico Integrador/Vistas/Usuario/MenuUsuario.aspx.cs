@@ -22,52 +22,52 @@ namespace Vistas
 
         protected void btnLinkAccion_Click(object sender, EventArgs e)
         {
-            Response.Redirect("MostrarPeliculaPorGenero.aspx?Gen=Accion");
+            Response.Redirect("MostrarPeliculaPorGenero.aspx?Gen=1");
         }
 
         protected void btnLinkAventura_Click(object sender, EventArgs e)
         {
-            Response.Redirect("MostrarPeliculaPorGenero.aspx?Gen=Aventura");
+            Response.Redirect("MostrarPeliculaPorGenero.aspx?Gen=2");
         }
 
         protected void LinkButtonComedia_Click(object sender, EventArgs e)
         {
-            Response.Redirect("MostrarPeliculaPorGenero.aspx?Gen=Comedia");
+            Response.Redirect("MostrarPeliculaPorGenero.aspx?Gen=3");
         }
 
         protected void btnLinkDrama_Click(object sender, EventArgs e)
         {
-            Response.Redirect("MostrarPeliculaPorGenero.aspx?Gen=Drama");
+            Response.Redirect("MostrarPeliculaPorGenero.aspx?Gen=4");
         }
 
         protected void btnLinkTerror_Click(object sender, EventArgs e)
         {
-            Response.Redirect("MostrarPeliculaPorGenero.aspx?Gen=Terror");
+            Response.Redirect("MostrarPeliculaPorGenero.aspx?Gen=5");
         }
 
         protected void btnLinkMusical_Click(object sender, EventArgs e)
         {
-            Response.Redirect("MostrarPeliculaPorGenero.aspx?Gen=Musical");
+            Response.Redirect("MostrarPeliculaPorGenero.aspx?Gen=6");
         }
 
         protected void btnLinkSuspenso_Click(object sender, EventArgs e)
         {
-            Response.Redirect("MostrarPeliculaPorGenero.aspx?Gen=Suspenso");
+            Response.Redirect("MostrarPeliculaPorGenero.aspx?Gen=7");
         }
 
         protected void btnLinkCienciaFiccion_Click(object sender, EventArgs e)
         {
-            Response.Redirect("MostrarPeliculaPorGenero.aspx?Gen=Ciencia Ficción");
+            Response.Redirect("MostrarPeliculaPorGenero.aspx?Gen=8");
         }
 
         protected void btnLinkBelica_Click(object sender, EventArgs e)
         {
-            Response.Redirect("MostrarPeliculaPorGenero.aspx?Gen=Bélica");
+            Response.Redirect("MostrarPeliculaPorGenero.aspx?Gen=9");
         }
 
         protected void btnLinkWestern_Click(object sender, EventArgs e)
         {
-            Response.Redirect("MostrarPeliculaPorGenero.aspx?Gen=Western");
+            Response.Redirect("MostrarPeliculaPorGenero.aspx?Gen=10");
         }
 
         protected void btnAceptar1_Click(System.Object sender, System.EventArgs e)
@@ -77,7 +77,7 @@ namespace Vistas
 
         protected void btnAceptar2_Click(System.Object sender, System.EventArgs e)
         {
-            Response.Redirect("MostrarPeliculaPorCategoria.aspx?Cat=" + ddlCategorias.Text);
+            Response.Redirect("MostrarPeliculaPorCategoria.aspx?Cat=" + ddlCategorias.SelectedValue);
         }
 
         protected void btnAceptar3_Click(System.Object sender, System.EventArgs e)

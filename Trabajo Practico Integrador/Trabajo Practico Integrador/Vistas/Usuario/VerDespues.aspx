@@ -19,29 +19,32 @@
             <br />
             <br />
             <br />
-            <asp:DataList ID="DataList1" runat="server" BackColor="Black" BorderColor="Olive" DataSourceID="SqlDataSource1" Font-Bold="False" Font-Italic="False" Font-Names="Calibri" Font-Overline="False" Font-Strikeout="False" Font-Underline="False" ForeColor="White" GridLines="Vertical">
+            <asp:DataList ID="DataList1" runat="server" BackColor="Black" BorderColor="Olive" DataSourceID="SqlDataSource1" Font-Bold="False" Font-Italic="False" Font-Names="Calibri" Font-Overline="False" Font-Strikeout="False" Font-Underline="False" ForeColor="White" GridLines="Vertical" DataKeyField="ID">
                 <ItemTemplate>
-                    Nombre_Pelicula:
-                    <asp:Label ID="Nombre_PeliculaLabel" runat="server" Text='<%# Eval("Nombre_Pelicula") %>' />
+                    ID:
+                    <asp:Label ID="IDLabel" runat="server" Text='<%# Eval("ID") %>' />
                     <br />
-                    Genero:
-                    <asp:Label ID="GeneroLabel" runat="server" Text='<%# Eval("Genero") %>' />
+                    Nombre:
+                    <asp:Label ID="NombreLabel" runat="server" Text='<%# Eval("Nombre") %>' />
                     <br />
-                    Año_Premio:
-                    <asp:Label ID="Año_PremioLabel" runat="server" Text='<%# Eval("Año_Premio") %>' />
+                    IdGenero:
+                    <asp:Label ID="IdGeneroLabel" runat="server" Text='<%# Eval("IdGenero") %>' />
                     <br />
-                    Director:
-                    <asp:Label ID="DirectorLabel" runat="server" Text='<%# Eval("Director") %>' />
+                    IdCategorias:
+                    <asp:Label ID="IdCategoriasLabel" runat="server" Text='<%# Eval("IdCategorias") %>' />
                     <br />
-                    Sinopsis:
-                    <asp:Label ID="SinopsisLabel" runat="server" Text='<%# Eval("Sinopsis") %>' />
+                    Año:
+                    <asp:Label ID="AñoLabel" runat="server" Text='<%# Eval("Año") %>' />
                     <br />
-                    &nbsp;<asp:Label ID="URL_Imagen_PeliculaLabel" runat="server" Text='<%# Eval("URL_Imagen_Pelicula") %>' />
+                    Sinopsis: <asp:Label ID="SinopsisLabel" runat="server" Text='<%# Eval("Sinopsis") %>' />
                     <br />
+                    Imagen:
+                    <asp:Label ID="ImagenLabel" runat="server" Text='<%# Eval("Imagen") %>' />
 <br />
+                    <br />
                 </ItemTemplate>
             </asp:DataList>
-            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:parcial1ConnectionString %>" SelectCommand="SELECT [Nombre_Pelicula], [Genero], [Año_Premio], [Director], [Sinopsis], [URL_Imagen_Pelicula] FROM [PELICULAS]"></asp:SqlDataSource>
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:OscarWinnersConnectionString2 %>" SelectCommand="SELECT * FROM [Peliculas]"></asp:SqlDataSource>
         </div>
     </form>
 </body>

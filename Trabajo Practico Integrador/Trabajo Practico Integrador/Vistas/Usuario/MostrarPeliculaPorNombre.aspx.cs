@@ -25,5 +25,10 @@ namespace Vistas
         {
 
         }
+
+        protected void btnLinkMenu_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Usuario/MenuUsuario.aspx");
+        }
     }
 }

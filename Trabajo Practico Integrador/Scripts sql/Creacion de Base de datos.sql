@@ -131,7 +131,7 @@ ALTER PROCEDURE sp_BuscarPeliculaPorNombre(
 )
 AS
 BEGIN
-select P.Nombre, G.Nombre as 'Genero',C.Nombre as 'Categoria', P.Año, P.Sinopsis from Peliculas P
+select P.Nombre, G.Nombre as 'Genero',C.Nombre as 'Categoria', P.Año, P.Sinopsis, P.Imagen from Peliculas P
 inner join Categorias C on C.ID=P.IdCategorias
 inner join Generos G on G.ID= P.IdGenero
 where P.Nombre = @NOMBREPELICULA
@@ -178,7 +178,7 @@ ALTER PROCEDURE sp_BuscarPeliculaPorGenero(
 )
 AS
 BEGIN
-select P.Nombre, G.Nombre as 'Genero',C.Nombre as 'Categoria', P.Año, P.Sinopsis from Peliculas P
+select P.Nombre, G.Nombre as 'Genero',C.Nombre as 'Categoria', P.Año, P.Sinopsis,P.Imagen from Peliculas P
 inner join Categorias C on C.ID=P.IdCategorias
 inner join Generos G on G.ID= P.IdGenero
 where G.Nombre= @GENERO
@@ -199,7 +199,7 @@ ALTER PROCEDURE sp_BuscarPeliculaPorAño(
 )
 AS
 BEGIN
-select P.Nombre, G.Nombre as 'Genero',C.Nombre as 'Categoria', P.Año, P.Sinopsis from Peliculas P
+select P.Nombre, G.Nombre as 'Genero',C.Nombre as 'Categoria', P.Año, P.Sinopsis,P.Imagen from Peliculas P
 inner join Categorias C on C.ID=P.IdCategorias
 inner join Generos G on G.ID= P.IdGenero
 where P.Año= @AÑO

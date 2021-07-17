@@ -1,7 +1,7 @@
 Agustin
--Verificar que funcione FILEUPLOAD en agregarPeliculas
--MenuUsuario: Response. write para enviar cada una de las busquedas (por categoria,nombre, etc)
--MostrarPelicula: Un webform por cada busqueda. Un listview que funcione con procedimientos almacenados
-por cada busqueda y que el parametro lo saque de un requestQuery. Deberia funcionar.
--Agregar el funcionamiento de los links buttons en esto y lo que hizo enzo. Verificar que todo ande.
--Vuelve a pasar el error de que los .cs no me reconoce las librerias ni nada. No puedo verificar nada asi.
+-Crear VerDespues(si no esta hecho) en la base de datos. Una tabla intermedia con que asocie
+usuarios con peliculas???
+-Los datos de ver despues deberan guardarse en un aplication de tipo datatable. A partir de ahi se maneja
+-Crear opciones en todos los mostrar y listar peliculas para seleccionar esa pelicula. El seleccionar guarda
+la pelicula en la base de datos
+-Quizas no es necesario el aplication. Puede funcionar solo con la base de datos
