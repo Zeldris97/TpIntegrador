@@ -83,13 +83,12 @@ namespace Negocio
 
         }
 
-        public bool AgregarUsuario(String Nombre, String Apellido, String Email, String UsrName, String Contrasenia, int DNI)
+        public bool AgregarUsuario(String Nombre, String Apellido, String Email, String UsrName, String Contrasenia)
         {
             Usuario Usr = new Usuario();
             Usr.setNombre(Nombre);
             Usr.setApellido(Apellido);
             Usr.setEmail(Email);
-            Usr.setDni(DNI);
             Usr.setUser(UsrName);
             Usr.setContrasenia(Contrasenia);
             Usr.setAdmin(false);

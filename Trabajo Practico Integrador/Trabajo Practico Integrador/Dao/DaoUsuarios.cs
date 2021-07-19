@@ -17,8 +17,7 @@ namespace Dao
         {
             DataTable tabla = ds.ObtenerTabla("Usuario", "Select * from Usuario where ID=" + usr.getId());
             usr.setId(Convert.ToInt32(tabla.Rows[0][0].ToString()));
-            usr.setDni(Convert.ToInt32(tabla.Rows[0][1].ToString()));
-            usr.setNombre(tabla.Rows[0][2].ToString());
+            usr.setNombre(tabla.Rows[0][1].ToString());
             usr.setApellido(tabla.Rows[0][3].ToString());
             usr.setEmail(tabla.Rows[0][4].ToString());
             usr.setUser(tabla.Rows[0][5].ToString());
@@ -29,9 +28,9 @@ namespace Dao
 
         public Usuario getIdusuario(Usuario usr)
         {
-           
-            DataTable tabla = ds.ObtenerTabla("Usuario", "Select ID from Usuario where Usuario=" + usr.getUser());
-            usr.setId(Convert.ToInt32(tabla.Rows[0][0].ToString()));
+            int id;
+            id= ds.ObtenerID("Select ID from Usuario where Usuario=" + usr.getUser());
+            usr.setId(id);
             return usr;
 
         }
@@ -100,7 +99,7 @@ namespace Dao
 
         public int agregarUsuario(Usuario Usr)
         {
-            Usr.setId(ds.ObtenerMaximo("SELECT max(ID) FROM Usuario") + 1);
+           
             SqlCommand cmd = new SqlCommand();
             armarParametrosUsuarioAgregar(ref cmd, Usr);
             return ds.EjecutarProcAlmacenado(cmd, "sp_AgregarUsuario");

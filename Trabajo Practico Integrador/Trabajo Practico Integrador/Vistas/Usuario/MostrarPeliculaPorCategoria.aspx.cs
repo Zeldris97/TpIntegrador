@@ -11,6 +11,9 @@ namespace Vistas.Usuario
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            string user;
+            user = (String)Application["DataUsuario"];
+            lblBienvenido.Text = "Bienvenido, " + user + "";
 
         }
 
@@ -32,7 +35,16 @@ namespace Vistas.Usuario
 
                 User = (int)Session["idUsuario"];
 
-                Vd.AgregarALista(User, Pel);
+
+                if (Vd.AgregarALista(User, Pel))
+                {
+                    Response.Write("Pelicula agregada");
+
+                }
+                else
+                {
+                    Response.Write("Error al agregar pelicula");
+                }
 
 
             }

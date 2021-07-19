@@ -31,10 +31,11 @@ namespace Vistas
 
             else
             {
-                if (Usr.AgregarUsuario(txbNombre.Text, txbApellido.Text, txbEmail.Text, txbUsuario.Text, txbContra.Text, Convert.ToInt32(txbDni.Text)))
+                if (Usr.AgregarUsuario(txbNombre.Text, txbApellido.Text, txbEmail.Text, txbUsuario.Text, txbContra.Text))
                 {
                     
                     lblExito.Visible = true;
+                    Response.Redirect("Acceso usuario.aspx");
                     
                 }
 
@@ -42,9 +43,14 @@ namespace Vistas
 
         }
 
+        protected void LinkButton1_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Acceso usuario.aspx");
+        }
 
-
-
-
+        protected void LinkButton2_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("AccesoAdministrador.aspx");
+        }
     }
 }

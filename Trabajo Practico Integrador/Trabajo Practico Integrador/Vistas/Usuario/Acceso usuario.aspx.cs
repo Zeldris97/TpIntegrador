@@ -23,8 +23,8 @@ namespace Vistas
             NegocioUsuario Usr = new NegocioUsuario();
             if(Usr.BuscarUsuario(txbUsuario.Text, txbContra.Text))
             {
-                
-                Session["DataUsuario"] = Usr.Cargar(txbUsuario.Text);
+               
+                Application["DataUsuario"] = txbUsuario.Text;
                 Session["IdUsuario"] = Usr.DevolverIdUsuario(txbUsuario.Text);
                 Response.Redirect("~/Usuario/MenuUsuario.aspx");
 
@@ -35,6 +35,16 @@ namespace Vistas
             {
                 lblNoExiste.Visible = true;
             }
+        }
+
+        protected void LinkButton1_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("RegistroUsuario.aspx");
+        }
+
+        protected void LinkButton2_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("AccesoAdministrador.aspx");
         }
     }
 }

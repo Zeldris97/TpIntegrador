@@ -90,6 +90,23 @@ namespace Dao
 
         }
 
+        public int ObtenerID(String consulta)
+        {
+            int id=0;
+            SqlConnection conexion = ObtenerConexion();
+            SqlCommand cmd = new SqlCommand(consulta, conexion);
+            SqlDataReader datos = cmd.ExecuteReader();
+            if (datos.Read())
+            {
+                id = Convert.ToInt32(datos[0].ToString());
+            }
+            conexion.Close();
+            return id;
+
+        }
+
+
+
 
     }
 }

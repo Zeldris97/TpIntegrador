@@ -193,8 +193,9 @@ CREATE PROCEDURE sp_MostrarVerDespues(
 )
 as
 begin
-select P.Nombre,P.Año, P.Sinopsis from VerDespues V
+select P.ID,P.Nombre,P.Año,G.Nombre as 'Genero'  from VerDespues V
 inner join Peliculas P on P.ID= V.IdPelicula
+inner join Generos G on G.ID = P.IdGenero
 inner join Usuario U on U.ID=V.IdUsuario
 where V.IdUsuario = @IDUSUARIO
 end

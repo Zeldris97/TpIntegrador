@@ -17,8 +17,11 @@ namespace Vistas
         
         protected void Page_Load(object sender, EventArgs e)
         {
+            string user;
             this.UnobtrusiveValidationMode = System.Web.UI.UnobtrusiveValidationMode.None;
-      
+            user = (String)Application["DataUsuario"];
+            lblBienvenido.Text = "Bienvenido, " + user + "";
+
         }
 
         protected void btnLinkAccion_Click(object sender, EventArgs e)
@@ -89,6 +92,13 @@ namespace Vistas
         protected void btnLinkPeliculas_Click(System.Object sender, System.EventArgs e)
         {
             Response.Redirect("ListarPeliculas.aspx");
+        }
+
+        protected void btnLinkSesion_Click(object sender, EventArgs e)
+        {
+            Application.Clear();
+            Response.Redirect("Acceso usuario.aspx");
+            
         }
     }
 }
