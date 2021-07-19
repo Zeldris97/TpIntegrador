@@ -27,6 +27,16 @@ namespace Dao
 
         }
 
+        public Usuario getIdusuario(Usuario usr)
+        {
+           
+            DataTable tabla = ds.ObtenerTabla("Usuario", "Select ID from Usuario where Usuario=" + usr.getUser());
+            usr.setId(Convert.ToInt32(tabla.Rows[0][0].ToString()));
+            return usr;
+
+        }
+
+
         public Boolean ExisteUsuario(Usuario usr)
         {
             String consulta = "Select * from Usuario where Usuario= '" + usr.getUser() + "' and Contraseña = '" + usr.getContrasenia() + "' and administrador =0";

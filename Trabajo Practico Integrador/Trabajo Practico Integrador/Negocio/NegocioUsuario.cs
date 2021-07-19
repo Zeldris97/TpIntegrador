@@ -59,6 +59,29 @@ namespace Negocio
 
 
         }
+        public int DevolverIdUsuario(string Usuario)
+        {
+            Usuario usr = new Usuario();
+            usr.setUser(Usuario);
+            int id;
+
+            if (dato.ExisteUsuarioUsrName(usr))
+            {
+
+                dato.getIdusuario(usr);
+                id = usr.getId();
+
+                return id;
+
+            }
+
+            else
+            {
+                return -1;
+            }
+
+
+        }
 
         public bool AgregarUsuario(String Nombre, String Apellido, String Email, String UsrName, String Contrasenia, int DNI)
         {

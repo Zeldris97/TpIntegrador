@@ -25,7 +25,11 @@ namespace Vistas
             {
                 
                 Session["DataUsuario"] = Usr.Cargar(txbUsuario.Text);
+                Session["IdUsuario"] = Usr.DevolverIdUsuario(txbUsuario.Text);
                 Response.Redirect("~/Usuario/MenuUsuario.aspx");
+
+
+              
             }
             else
             {

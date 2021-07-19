@@ -24,6 +24,12 @@ namespace Vistas.Usuario
         protected void btnAgregar_Click(object sender, EventArgs e)
         {
 
+            if (e.CommandName == "eventoAgregar")
+            {
+
+
+
+            }
         }
     }
 }

@@ -211,7 +211,6 @@
             </asp:ListView>
             <br />
         </div>
-        <asp:Button ID="btnAgregar" runat="server" OnClick="btnAgregar_Click" Text="Agregar a lista" />
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:OscarWinnersConnectionString %>" SelectCommand="select P.ID, P.Nombre, G.Nombre as 'Genero',C.Nombre as 'Categoria', P.Año, P.Sinopsis,P.Imagen from Peliculas P
 inner join Categorias C on C.ID=P.IdCategorias
 inner join Generos G on G.ID= P.IdGenero
