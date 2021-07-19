@@ -166,7 +166,7 @@
                     </span>
                     <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl='<%# Eval("Imagen") %>' Width="150px" />
                     <br />
-                    <asp:Button ID="btnAgregar" runat="server" CommandArgument='<%# Eval("ID") %>' CommandName="eventoAgregar" OnClick="btnAgregar_Click" Text="Agregar a lista" />
+                    <asp:Button ID="btnAgregar" runat="server" CommandArgument='<%# Eval("ID") %>' CommandName="eventoAgregar" OnClick="btnAgregar_Click" Text="Agregar a lista" OnCommand="btnAgregar_Command" />
                 </ItemTemplate>
                 <LayoutTemplate>
                     <div id="itemPlaceholderContainer" runat="server" style="font-family: Verdana, Arial, Helvetica, sans-serif;">

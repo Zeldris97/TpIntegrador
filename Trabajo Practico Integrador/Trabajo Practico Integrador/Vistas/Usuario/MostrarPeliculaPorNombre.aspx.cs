@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Negocio;
 
 namespace Vistas
 {
@@ -29,6 +30,25 @@ namespace Vistas
         protected void btnLinkMenu_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/Usuario/MenuUsuario.aspx");
+        }
+
+        protected void btnAgregar_Command(object sender, CommandEventArgs e)
+        {
+            NegocioVerDespues Vd = new NegocioVerDespues();
+
+            if (e.CommandName == "eventoAgregar")
+            {
+                int Pel;
+                int User;
+
+                Pel = Convert.ToInt32(e.CommandArgument.ToString());
+
+                User = (int)Session["idUsuario"];
+
+                Vd.AgregarALista(User, Pel);
+
+
+            }
         }
     }
 }

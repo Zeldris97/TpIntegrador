@@ -9,7 +9,7 @@ using Entidades;
 
 namespace Negocio
 {
-    class NegocioVerDespues
+    public class NegocioVerDespues
     {
         DaoVerDespues dao = new DaoVerDespues();
 
