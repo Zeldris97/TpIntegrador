@@ -18,5 +18,12 @@ namespace Vistas.Usuario
         {
             Response.Redirect("~/Usuario/MenuUsuario.aspx");
         }
+
+        
+
+        protected void btnAgregar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

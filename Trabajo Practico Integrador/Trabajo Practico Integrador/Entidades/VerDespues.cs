@@ -8,13 +8,13 @@ namespace Entidades
 {
     public class VerDespues
     {
-        private int Id;
+      
         private int IdUser;
         private int IdPelicula;
+        private int Id;
 
         public VerDespues()
         { }
-
         public int getId()
         {
             return Id;
@@ -22,7 +22,7 @@ namespace Entidades
 
         public void setId(int i)
         {
-             Id = i;
+            Id = i;
         }
 
         public int getIdUser()

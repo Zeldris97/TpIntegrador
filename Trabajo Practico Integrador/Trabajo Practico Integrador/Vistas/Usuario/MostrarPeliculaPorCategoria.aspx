@@ -11,143 +11,142 @@
         <div>
             <asp:Label ID="Label1" runat="server" Font-Size="Larger" Text="Oscar Winners Finder"></asp:Label>
             <br />
-            <asp:ListView ID="ListView1" runat="server" DataSourceID="SqlDataSource1" DataKeyNames="ID" GroupItemCount="3">
+            <asp:ListView ID="ListView1" runat="server" DataSourceID="SqlDataSource1">
+              
+                <%--<AlternatingItemTemplate>
+                    <span style="background-color: #FAFAD2;color: #284775;">Nombre:
+                    <asp:Label ID="NombreLabel" runat="server" Text='<%# Eval("Nombre") %>' />
+                    <br />
+                    Genero:
+                    <asp:Label ID="GeneroLabel" runat="server" Text='<%# Eval("Genero") %>' />
+                    <br />
+                    Categoria:
+                    <asp:Label ID="CategoriaLabel" runat="server" Text='<%# Eval("Categoria") %>' />
+                    <br />
+                    Año:
+                    <asp:Label ID="AñoLabel" runat="server" Text='<%# Eval("Año") %>' />
+                    <br />
+                    Sinopsis:
+                    <asp:Label ID="SinopsisLabel" runat="server" Text='<%# Eval("Sinopsis") %>' />
+                    <br />
+                    Imagen:
+                    <asp:Label ID="ImagenLabel" runat="server" Text='<%# Eval("Imagen") %>' />
+                    <br />
+                    <br />
+                    </span>
+                </AlternatingItemTemplate>--%>
               
                 <EditItemTemplate>
-                    <td runat="server" style="">ID:
-                        <asp:Label ID="IDLabel1" runat="server" Text='<%# Eval("ID") %>' />
-                        <br />
-                        Nombre:
-                        <asp:TextBox ID="NombreTextBox" runat="server" Text='<%# Bind("Nombre") %>' />
-                        <br />
-                        IdGenero:
-                        <asp:TextBox ID="IdGeneroTextBox" runat="server" Text='<%# Bind("IdGenero") %>' />
-                        <br />
-                        IdCategorias:
-                        <asp:TextBox ID="IdCategoriasTextBox" runat="server" Text='<%# Bind("IdCategorias") %>' />
-                        <br />
-                        Año:
-                        <asp:TextBox ID="AñoTextBox" runat="server" Text='<%# Bind("Año") %>' />
-                        <br />
-                        Sinopsis:
-                        <asp:TextBox ID="SinopsisTextBox" runat="server" Text='<%# Bind("Sinopsis") %>' />
-                        <br />
-                        Imagen:
-                        <asp:TextBox ID="ImagenTextBox" runat="server" Text='<%# Bind("Imagen") %>' />
-                        <br />
-                        <asp:Button ID="UpdateButton" runat="server" CommandName="Update" Text="Update" />
-                        <br />
-                        <asp:Button ID="CancelButton" runat="server" CommandName="Cancel" Text="Cancel" />
-                        <br />
-                    </td>
+                    <span style="background-color: #FFCC66;color: #000080;">Nombre:
+                    <asp:TextBox ID="NombreTextBox" runat="server" Text='<%# Bind("Nombre") %>' />
+                    <br />
+                    Genero:
+                    <asp:TextBox ID="GeneroTextBox" runat="server" Text='<%# Bind("Genero") %>' />
+                    <br />
+                    Categoria:
+                    <asp:TextBox ID="CategoriaTextBox" runat="server" Text='<%# Bind("Categoria") %>' />
+                    <br />
+                    Año:
+                    <asp:TextBox ID="AñoTextBox" runat="server" Text='<%# Bind("Año") %>' />
+                    <br />
+                    Sinopsis:
+                    <asp:TextBox ID="SinopsisTextBox" runat="server" Text='<%# Bind("Sinopsis") %>' />
+                    <br />
+                    Imagen:
+                    <asp:TextBox ID="ImagenTextBox" runat="server" Text='<%# Bind("Imagen") %>' />
+                    <br />
+                    <asp:Button ID="UpdateButton" runat="server" CommandName="Update" Text="Actualizar" />
+                    <asp:Button ID="CancelButton" runat="server" CommandName="Cancel" Text="Cancelar" />
+                    <br />
+                    <br />
+                    </span>
                 </EditItemTemplate>
                 <EmptyDataTemplate>
-                    <table runat="server" style="">
-                        <tr>
-                            <td>No data was returned.</td>
-                        </tr>
-                    </table>
+                    <span>No se han devuelto datos.</span>
                 </EmptyDataTemplate>
-                <EmptyItemTemplate>
-                    <td runat="server" />
-                </EmptyItemTemplate>
-                <GroupTemplate>
-                    <tr id="itemPlaceholderContainer" runat="server">
-                        <td id="itemPlaceholder" runat="server"></td>
-                    </tr>
-                </GroupTemplate>
                
                 <InsertItemTemplate>
-                    <td runat="server" style="">Nombre:
-                        <asp:TextBox ID="NombreTextBox" runat="server" Text='<%# Bind("Nombre") %>' />
-                        <br />
-                        IdGenero:
-                        <asp:TextBox ID="IdGeneroTextBox" runat="server" Text='<%# Bind("IdGenero") %>' />
-                        <br />
-                        IdCategorias:
-                        <asp:TextBox ID="IdCategoriasTextBox" runat="server" Text='<%# Bind("IdCategorias") %>' />
-                        <br />
-                        Año:
-                        <asp:TextBox ID="AñoTextBox" runat="server" Text='<%# Bind("Año") %>' />
-                        <br />
-                        Sinopsis:
-                        <asp:TextBox ID="SinopsisTextBox" runat="server" Text='<%# Bind("Sinopsis") %>' />
-                        <br />
-                        Imagen:
-                        <asp:TextBox ID="ImagenTextBox" runat="server" Text='<%# Bind("Imagen") %>' />
-                        <br />
-                        <asp:Button ID="InsertButton" runat="server" CommandName="Insert" Text="Insert" />
-                        <br />
-                        <asp:Button ID="CancelButton" runat="server" CommandName="Cancel" Text="Clear" />
-                        <br />
-                    </td>
+                    <span style="">Nombre:
+                    <asp:TextBox ID="NombreTextBox" runat="server" Text='<%# Bind("Nombre") %>' />
+                    <br />
+                    Genero:
+                    <asp:TextBox ID="GeneroTextBox" runat="server" Text='<%# Bind("Genero") %>' />
+                    <br />
+                    Categoria:
+                    <asp:TextBox ID="CategoriaTextBox" runat="server" Text='<%# Bind("Categoria") %>' />
+                    <br />
+                    Año:
+                    <asp:TextBox ID="AñoTextBox" runat="server" Text='<%# Bind("Año") %>' />
+                    <br />
+                    Sinopsis:
+                    <asp:TextBox ID="SinopsisTextBox" runat="server" Text='<%# Bind("Sinopsis") %>' />
+                    <br />
+                    Imagen:
+                    <asp:TextBox ID="ImagenTextBox" runat="server" Text='<%# Bind("Imagen") %>' />
+                    <br />
+                    <asp:Button ID="InsertButton" runat="server" CommandName="Insert" Text="Insertar" />
+                    <asp:Button ID="CancelButton" runat="server" CommandName="Cancel" Text="Borrar" />
+                    <br />
+                    <br />
+                    </span>
                 </InsertItemTemplate>
                 <ItemTemplate>
-                    <td runat="server" style="">ID:
-                        <asp:Label ID="IDLabel" runat="server" Text='<%# Eval("ID") %>' />
-                        <br />
-                        Nombre:
-                        <asp:Label ID="NombreLabel" runat="server" Text='<%# Eval("Nombre") %>' />
-                        <br />
-                        IdGenero:
-                        <asp:Label ID="IdGeneroLabel" runat="server" Text='<%# Eval("IdGenero") %>' />
-                        <br />
-                        IdCategorias:
-                        <asp:Label ID="IdCategoriasLabel" runat="server" Text='<%# Eval("IdCategorias") %>' />
-                        <br />
-                        Año:
-                        <asp:Label ID="AñoLabel" runat="server" Text='<%# Eval("Año") %>' />
-                        <br />
-                        Sinopsis:
-                        <asp:Label ID="SinopsisLabel" runat="server" Text='<%# Eval("Sinopsis") %>' />
-                        <br />
-                        <asp:ImageButton ID="ImageButton1" runat="server" Height="200px" ImageUrl='<%# Eval("Imagen") %>' Width="200px" />
-                        <br />
-                    </td>
+                    <span style="background-color: #FFFBD6;color: #333333;">Nombre:
+                    <asp:Label ID="NombreLabel" runat="server" Text='<%# Eval("Nombre") %>' />
+                    <br />
+                    Genero:
+                    <asp:Label ID="GeneroLabel" runat="server" Text='<%# Eval("Genero") %>' />
+                    <br />
+                    Premio:
+                    <asp:Label ID="CategoriaLabel" runat="server" Text='<%# Eval("Categoria") %>' />
+                    <br />
+                    Año:
+                    <asp:Label ID="AñoLabel" runat="server" Text='<%# Eval("Año") %>' />
+                    <br />
+                    Sinopsis:
+                    <asp:Label ID="SinopsisLabel" runat="server" Text='<%# Eval("Sinopsis") %>' />
+                    <br />
+                    <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl='<%# Eval("Imagen") %>' Width="150px" />
+                    &nbsp;<br />
+                    <br />
+                    </span>
                 </ItemTemplate>
                 <LayoutTemplate>
-                    <table runat="server">
-                        <tr runat="server">
-                            <td runat="server" style=""></td>
-                        </tr>
-                        <tr runat="server">
-                            <td runat="server">
-                                <table id="groupPlaceholderContainer" runat="server" border="0" style="">
-                                    <tr id="groupPlaceholder" runat="server">
-                                    </tr>
-                                </table>
-                            </td>
-                        </tr>
-                    </table>
+                    <div id="itemPlaceholderContainer" runat="server" style="font-family: Verdana, Arial, Helvetica, sans-serif;">
+                        <span runat="server" id="itemPlaceholder" />
+                    </div>
+                    <div style="text-align: center;background-color: #FFCC66;font-family: Verdana, Arial, Helvetica, sans-serif;color: #333333;">
+                    </div>
                 </LayoutTemplate>
                 <SelectedItemTemplate>
-                    <td runat="server" style="">ID:
-                        <asp:Label ID="IDLabel" runat="server" Text='<%# Eval("ID") %>' />
-                        <br />
-                        Nombre:
-                        <asp:Label ID="NombreLabel" runat="server" Text='<%# Eval("Nombre") %>' />
-                        <br />
-                        IdGenero:
-                        <asp:Label ID="IdGeneroLabel" runat="server" Text='<%# Eval("IdGenero") %>' />
-                        <br />
-                        IdCategorias:
-                        <asp:Label ID="IdCategoriasLabel" runat="server" Text='<%# Eval("IdCategorias") %>' />
-                        <br />
-                        Año:
-                        <asp:Label ID="AñoLabel" runat="server" Text='<%# Eval("Año") %>' />
-                        <br />
-                        Sinopsis:
-                        <asp:Label ID="SinopsisLabel" runat="server" Text='<%# Eval("Sinopsis") %>' />
-                        <br />
-                        Imagen:
-                        <asp:Label ID="ImagenLabel" runat="server" Text='<%# Eval("Imagen") %>' />
-                        <br />
-                    </td>
+                    <span style="background-color: #FFCC66;font-weight: bold;color: #000080;">Nombre:
+                    <asp:Label ID="NombreLabel" runat="server" Text='<%# Eval("Nombre") %>' />
+                    <br />
+                    Genero:
+                    <asp:Label ID="GeneroLabel" runat="server" Text='<%# Eval("Genero") %>' />
+                    <br />
+                    Categoria:
+                    <asp:Label ID="CategoriaLabel" runat="server" Text='<%# Eval("Categoria") %>' />
+                    <br />
+                    Año:
+                    <asp:Label ID="AñoLabel" runat="server" Text='<%# Eval("Año") %>' />
+                    <br />
+                    Sinopsis:
+                    <asp:Label ID="SinopsisLabel" runat="server" Text='<%# Eval("Sinopsis") %>' />
+                    <br />
+                    Imagen:
+                    <asp:Label ID="ImagenLabel" runat="server" Text='<%# Eval("Imagen") %>' />
+                    <br />
+                    <br />
+                    </span>
                 </SelectedItemTemplate>
             </asp:ListView>
-            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="Data Source=localhost\\sqlExpress;Initial Catalog=OscarWinners;Integrated Security=True" SelectCommand="SELECT * FROM [Peliculas] WHERE ([IdCategorias] = @IdCategorias)">
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:OscarWinnersConnectionString %>" SelectCommand="select P.Nombre, G.Nombre as 'Genero',C.Nombre as 'Categoria', P.Año, P.Sinopsis,P.Imagen from Peliculas P
+inner join Categorias C on C.ID=P.IdCategorias
+inner join Generos G on G.ID= P.IdGenero
+where C.Nombre = @CATEGORIA">
                 <SelectParameters>
-                    <asp:QueryStringParameter Name="IdCategorias" QueryStringField="Cat" Type="Int16" />
+                    <asp:QueryStringParameter Name="CATEGORIA" QueryStringField="Cat" />
                 </SelectParameters>
             </asp:SqlDataSource>
             <br />

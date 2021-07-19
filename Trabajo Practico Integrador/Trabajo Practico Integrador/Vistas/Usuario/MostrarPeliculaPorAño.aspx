@@ -12,7 +12,7 @@
         <div>
             <asp:Label ID="Label1" runat="server" Font-Size="Larger" Text="Oscar Winners Finder"></asp:Label>
             <br />
-            <asp:ListView ID="ListView1" runat="server" DataSourceID="SqlDataSource1" DataKeyNames="ID" GroupItemCount="3">
+            <asp:ListView ID="ListView1" runat="server" DataSourceID="SqlDataSource1" GroupItemCount="3">
               
                 <EditItemTemplate>
                     <td runat="server" style="">ID:
@@ -85,17 +85,14 @@
                     </td>
                 </InsertItemTemplate>
                 <ItemTemplate>
-                    <td runat="server" style="">ID:
-                        <asp:Label ID="IDLabel" runat="server" Text='<%# Eval("ID") %>' />
-                        <br />
-                        Nombre:
+                    <td runat="server" style="">Nombre:
                         <asp:Label ID="NombreLabel" runat="server" Text='<%# Eval("Nombre") %>' />
                         <br />
-                        IdGenero:
-                        <asp:Label ID="IdGeneroLabel" runat="server" Text='<%# Eval("IdGenero") %>' />
+                        Genero:
+                        <asp:Label ID="IdGeneroLabel" runat="server" Text='<%# Eval("Genero") %>' />
                         <br />
-                        IdCategorias:
-                        <asp:Label ID="IdCategoriasLabel" runat="server" Text='<%# Eval("IdCategorias") %>' />
+                        Premio:
+                        <asp:Label ID="IdCategoriasLabel" runat="server" Text='<%# Eval("Categoria") %>' />
                         <br />
                         Año:
                         <asp:Label ID="AñoLabel" runat="server" Text='<%# Eval("Año") %>' />
@@ -149,7 +146,10 @@
             </asp:ListView>
             <br />
         </div>
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="Data Source=localhost\\sqlExpress;Initial Catalog=OscarWinners;Integrated Security=True" SelectCommand="SELECT [ID], [Nombre], [IdGenero], [IdCategorias], [Año], [Sinopsis], [Imagen] FROM [Peliculas] WHERE ([Año] = @Año)">
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:OscarWinnersConnectionString %>" SelectCommand="select P.Nombre, G.Nombre as 'Genero',C.Nombre as 'Categoria', P.Año, P.Sinopsis,P.Imagen from Peliculas P
+inner join Categorias C on C.ID=P.IdCategorias
+inner join Generos G on G.ID= P.IdGenero
+where P.Año= @AÑO">
             <SelectParameters>
                 <asp:QueryStringParameter Name="Año" QueryStringField="Anio" Type="Int64" />
             </SelectParameters>

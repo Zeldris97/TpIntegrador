@@ -29,15 +29,11 @@ Dni bigint not null,
 Nombre Varchar (50) not null,
 Apellido varchar (50) null,
 Email Varchar (50) not null,
-Usuario Varchar (50) not null,
+Usuario Varchar (50) not null unique,
 Contraseña Varchar (50) not null,
+administrador bit not null default (0)
 )
 
-ALTER TABLE Peliculas
-add unique (Nombre)
-
-ALTER TABLE Usuario
-add unique (Usuario)
 
 CREATE TABLE VerDespues (
 ID int primary key identity (1,1) not null,
@@ -47,8 +43,7 @@ IdPelicula int foreign key references Peliculas (ID)
 
 ALTER TABLE Peliculas add constraint CHK_año check (Año > 1928 and año < YEAR (GETDATE()))
 
-ALTER TABLE Usuario 
-ADD administrador bit not null default (0)
+
 
 
 
@@ -102,7 +97,7 @@ BEGIN
 	 END
 
 
-EXEC spAgregarPelicula Titanic,  'La trama, una epopeya romántica,3​4​ relata la relación de Jack Dawson y Rose DeWitt Bukater, dos jóvenes que se conocen y se enamoran a bordo del transatlántico RMS Titanic en su viaje inaugural desde Southampton (Inglaterra) a Nueva York (EE. UU.) en abril de 1912', 1997, 4,1, TITANIC
+
 
 CREATE PROCEDURE sp_AgregarUsuario (
 @NOMBREUSUARIO varchar (50),
@@ -118,15 +113,8 @@ begin
 INSERT INTO Usuario (Nombre, Apellido, Email,Usuario,Contraseña,administrador) values (@NOMBREUSUARIO, @APELLIDOUSUARIO,@EMAILUSUARIO,@USERNAME,@CONTRASEÑAUSUARIO,@ADMINUSUARIO)
 END
 
-CREATE PROCEDURE sp_BuscarPeliculaPorNombre(
-@NOMBREPELICULA varchar (100)
-)
-AS
-BEGIN
-select * from Peliculas where Nombre = @NOMBREPELICULA
-End
 
-ALTER PROCEDURE sp_BuscarPeliculaPorNombre(
+CREATE PROCEDURE sp_BuscarPeliculaPorNombre(
 @NOMBREPELICULA varchar (100)
 )
 AS
@@ -137,7 +125,7 @@ inner join Generos G on G.ID= P.IdGenero
 where P.Nombre = @NOMBREPELICULA
 End
 
-ALTER PROCEDURE sp_BuscarPeliculaPorCategoria(
+CREATE PROCEDURE sp_BuscarPeliculaPorCategoria(
 @CATEGORIA varchar (100)
 )
 AS
@@ -151,29 +139,7 @@ End
 
 
 
-
-CREATE PROCEDURE sp_BuscarPeliculaPorCategoria(
-@CATEGORIA varchar (100)
-)
-AS
-BEGIN
-select * from Peliculas P
-inner join Categorias C on C.ID= P.IdCategorias
-where C.Nombre= @CATEGORIA
-End
-
 CREATE PROCEDURE sp_BuscarPeliculaPorGenero(
-@GENERO varchar (100)
-)
-AS
-BEGIN
-select * from Peliculas P
-inner join Generos G on G.ID = P.IdGenero
-where G.Nombre= @GENERO
-End
-
-
-ALTER PROCEDURE sp_BuscarPeliculaPorGenero(
 @GENERO varchar (100)
 )
 AS
@@ -186,15 +152,6 @@ End
 
 
 CREATE PROCEDURE sp_BuscarPeliculaPorAño(
-@AÑO BIGINT
-)
-AS
-BEGIN
-select * from Peliculas where Año = @AÑO
-End
-
-
-ALTER PROCEDURE sp_BuscarPeliculaPorAño(
 @AÑO bigint
 )
 AS
@@ -204,3 +161,40 @@ inner join Categorias C on C.ID=P.IdCategorias
 inner join Generos G on G.ID= P.IdGenero
 where P.Año= @AÑO
 End
+
+CREATE PROCEDURE sp_AgregarVerDespues(
+@IDUSUARIO int,
+@IDPELICULA int
+)
+as 
+begin 
+begin try
+insert into VerDespues(IdUsuario,IdPelicula) VALUES (@IDUSUARIO,@IDPELICULA)
+end try
+begin catch
+RAISERROR ('La pelicula ya fue agregada', 16,1)
+end catch
+end
+
+
+
+CREATE PROCEDURE sp_EliminarVerDespues(
+@IDUSUARIO int,
+@IDPELICULA int
+)
+as 
+begin
+delete from VerDespues where IdUsuario= @IDUSUARIO and IdPelicula = @IDPELICULA
+end
+
+
+CREATE PROCEDURE sp_MostrarVerDespues(
+@IDUSUARIO INT
+)
+as
+begin
+select P.Nombre,P.Año, P.Sinopsis from VerDespues V
+inner join Peliculas P on P.ID= V.IdPelicula
+inner join Usuario U on U.ID=V.IdUsuario
+where V.IdUsuario = @IDUSUARIO
+end

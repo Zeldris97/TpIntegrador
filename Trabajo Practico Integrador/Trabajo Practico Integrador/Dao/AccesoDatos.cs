@@ -71,21 +71,21 @@ namespace Dao
             {
                 Estado = true;
             }
+            conexion.Close();
             return Estado;
         }
 
         public int ObtenerMaximo(String consulta)
         {
             int max = 0;
-            SqlConnection conexion = new SqlConnection();
-            conexion.ConnectionString = RutaBD;
-            conexion.Open();
+            SqlConnection conexion = ObtenerConexion();
             SqlCommand cmd = new SqlCommand(consulta, conexion);
             SqlDataReader datos = cmd.ExecuteReader();
             if (datos.Read())
             {
                 max = Convert.ToInt32(datos[0].ToString());
             }
+            conexion.Close();
             return max;
 
         }

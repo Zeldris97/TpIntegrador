@@ -13,15 +13,7 @@ namespace Dao
     {
         AccesoDatos ds = new AccesoDatos();
 
-        public VerDespues getVerDespues(VerDespues vd)
-        {
-            DataTable tabla = ds.ObtenerTabla("VerDespues", "Select * from VerDespues where ID=" + vd.getId());
-            vd.setId(Convert.ToInt32(tabla.Rows[0][0].ToString()));
-            vd.setIdUser(Convert.ToInt32(tabla.Rows[0][1].ToString()));
-            vd.setIdPelicula(Convert.ToInt32(tabla.Rows[0][2].ToString()));
-            return vd;
-
-        }
+      
         public Boolean ExisteVerDespues(VerDespues vd)
         {
             String consulta = "Select * from VerDespues where ID='" + vd.getId().ToString() + "'";
@@ -42,11 +34,21 @@ namespace Dao
             return Tabla;
         }
 
+        private void armarParametrosMostrarVerDespues(ref SqlCommand comando, VerDespues vd)
+        {
+
+            SqlParameter sqlParametros = new SqlParameter();
+            sqlParametros = comando.Parameters.Add("@IDUSUARIO", SqlDbType.Int);
+            sqlParametros.Value = vd.getIdUser();
+        }
+
         private void armarParametrosVerDespuesEliminar(ref SqlCommand comando, VerDespues vd)
         {
             SqlParameter sqlParametros = new SqlParameter();
-            sqlParametros = comando.Parameters.Add("@IDVERDESPUES", SqlDbType.Int);
-            sqlParametros.Value = vd.getId();
+            sqlParametros = comando.Parameters.Add("@IDUSUARIO", SqlDbType.Int);
+            sqlParametros.Value = vd.getIdUser();
+            sqlParametros = comando.Parameters.Add("@IDPELICULA", SqlDbType.Int);
+            sqlParametros.Value = vd.getIdPelicula();
         }
 
         public int eliminarVerDespues(VerDespues vd)
@@ -60,20 +62,27 @@ namespace Dao
         private void armarParametrosVerDespuesAgregar(ref SqlCommand comando, VerDespues vd)
         {
             SqlParameter sqlParametros = new SqlParameter();
-            sqlParametros = comando.Parameters.Add("@IDVERDESPUES", SqlDbType.Int);
-            sqlParametros.Value = vd.getId();
-            sqlParametros = comando.Parameters.Add("@IDUSUARIOVERDESPUES", SqlDbType.Int);
+            sqlParametros = comando.Parameters.Add("@IDUSUARIO", SqlDbType.Int);
             sqlParametros.Value = vd.getIdUser();
-            sqlParametros = comando.Parameters.Add("@IDPELICULAVERDESPUES", SqlDbType.Int);
+            sqlParametros = comando.Parameters.Add("@IDPELICULA", SqlDbType.Int);
             sqlParametros.Value = vd.getIdPelicula();
         }
 
         public int agregarVerDespues(VerDespues vd)
         {
-            vd.setId(ds.ObtenerMaximo("SELECT max(ID) FROM VerDespues") + 1);
+            
             SqlCommand cmd = new SqlCommand();
             armarParametrosVerDespuesAgregar(ref cmd, vd);
             return ds.EjecutarProcAlmacenado(cmd, "spAgregarVerDespues");
+
+        }
+
+        public DataTable MostrarVerDespues(VerDespues vd)
+        {
+            SqlCommand cmd = new SqlCommand();
+            armarParametrosMostrarVerDespues(ref cmd, vd);
+            DataTable Tabla = ds.ObtenerTabla("VerDespues", "spMostrarVerDespues");
+            return Tabla;
 
         }
 
