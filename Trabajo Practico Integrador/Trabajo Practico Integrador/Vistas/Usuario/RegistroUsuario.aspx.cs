@@ -35,6 +35,7 @@ namespace Vistas
                 {
                     
                     lblExito.Visible = true;
+                    LimpiarCampos();
                     Response.Redirect("Acceso usuario.aspx");
                     
                 }
@@ -51,6 +52,16 @@ namespace Vistas
         protected void LinkButton2_Click(object sender, EventArgs e)
         {
             Response.Redirect("AccesoAdministrador.aspx");
+        }
+
+        protected void LimpiarCampos()
+        {
+            txbNombre.Text = "";
+            txbApellido.Text = "";
+            txbEmail.Text = "";
+            txbUsuario.Text = "";
+            txbContra.Text = "";
+            txbContra2.Text = "";
         }
     }
 }
