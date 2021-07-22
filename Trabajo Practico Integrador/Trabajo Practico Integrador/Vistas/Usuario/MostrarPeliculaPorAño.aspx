@@ -69,6 +69,7 @@
                     Imagen:
                     <asp:TextBox ID="ImagenTextBox" runat="server" Text='<%# Bind("Imagen") %>' />
                     <br />
+                    <br />
                     <asp:Button ID="InsertButton" runat="server" CommandName="Insert" Text="Insertar" />
                     <asp:Button ID="CancelButton" runat="server" CommandName="Cancel" Text="Borrar" />
                     <br />
@@ -76,6 +77,7 @@
                     </span>
                 </InsertItemTemplate>
                 <ItemTemplate>
+                    ID:
                     <asp:Label ID="IDLabel" runat="server" Text='<%# Eval("ID") %>'></asp:Label>
                     <br />
                     Nombre:
@@ -156,7 +158,7 @@ where P.Año= @AÑO">
                 <asp:QueryStringParameter Name="Año" QueryStringField="Anio" Type="Int64" />
             </SelectParameters>
         </asp:SqlDataSource>
-        <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Usuario/ListaPeliculas.aspx">Ver lista</asp:HyperLink>
+        <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Usuario/VerDespues.aspx">Ver lista</asp:HyperLink>
         <br />
         <asp:LinkButton ID="btnLinkMenu" runat="server" OnClick="btnLinkMenu_Click">Volver al menu</asp:LinkButton>
     </form>

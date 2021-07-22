@@ -53,5 +53,11 @@ namespace Vistas
 
             }
         }
+
+        protected void LinkButton1_Click(object sender, EventArgs e)
+        {
+            Application.Clear();
+            Response.Redirect("Acceso usuario.aspx");
+        }
     }
 }

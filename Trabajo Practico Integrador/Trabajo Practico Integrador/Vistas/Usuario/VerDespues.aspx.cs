@@ -53,5 +53,11 @@ namespace Vistas.Usuario
         {
             Response.Redirect("~/Usuario/MenuUsuario.aspx");
         }
+
+        protected void LinkButton2_Click(object sender, EventArgs e)
+        {
+            Application.Clear();
+            Response.Redirect("Acceso usuario.aspx");
+        }
     }
 }

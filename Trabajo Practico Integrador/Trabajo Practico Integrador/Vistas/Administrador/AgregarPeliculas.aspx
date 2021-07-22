@@ -82,11 +82,11 @@
         <div>
             <br />
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:LinkButton ID="btnAgregarLink" runat="server">Agregar pelicula</asp:LinkButton>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/Administrador/AgregarPeliculas.aspx">Agregar pelicula</asp:HyperLink>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:LinkButton ID="btnLinkListar" runat="server">Listar película</asp:LinkButton>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Administrador/MenuAdministrador.aspx">Volver a menu</asp:HyperLink>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:HyperLink ID="hlEliminarSucursal" runat="server" NavigateUrl="~/Administrador/EliminarPelicula.aspx">Eliminar pelicula</asp:HyperLink>
             <br />
             <br />
@@ -148,7 +148,7 @@
                 <tr>
                     <td class="auto-style34" style="text-align: left; white-space: normal; line-height: normal; vertical-align: text-bottom;">Sinopsis:</td>
                     <td class="auto-style45">
-                        <asp:TextBox ID="txtSinopsis" runat="server" Height="138px" Width="352px"></asp:TextBox>
+                        <asp:TextBox ID="txtSinopsis" runat="server" Height="138px" Width="352px" Rows="20" TextMode="MultiLine"></asp:TextBox>
                     </td>
                     <td class="auto-style36">
                         <asp:RequiredFieldValidator ID="rfvSinopsis" runat="server" ControlToValidate="txtSinopsis" ValidationGroup="1"></asp:RequiredFieldValidator>

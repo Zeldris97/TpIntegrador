@@ -125,7 +125,7 @@
              <tr>
                 <td class="auto-style15">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Label ID="Label7" runat="server" Text="Repetir contraseña:"></asp:Label>
                     <asp:TextBox ID="txbContra2" runat="server" TextMode="Password"></asp:TextBox>
-                    <asp:CompareValidator ID="CompareValidator1" runat="server" ControlToCompare="txbContra" ControlToValidate="TextBox1"></asp:CompareValidator>
+                    <asp:CompareValidator ID="CompareValidator1" runat="server" ControlToCompare="txbContra" ControlToValidate="txbContra2"></asp:CompareValidator>
                  </td>
                 <td class="auto-style15"></td>
             </tr>

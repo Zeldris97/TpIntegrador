@@ -80,5 +80,11 @@ namespace Vistas.Usuario
 
 
         }
+
+        protected void LinkSesion_Click(object sender, EventArgs e)
+        {
+            Application.Clear();
+            Response.Redirect("AccesoAdministrador.aspx");
+        }
     }
 }
