@@ -28,12 +28,18 @@ namespace Negocio
             if (existe == false)
             {
                 canFilas = dao.agregarVerDespues(ver);
+
+
+                if (canFilas == 1)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
 
-            if (canFilas == 1)
-            {
-                return true;
-            }
             else
             {
                 return false;

@@ -16,7 +16,7 @@ namespace Dao
       
         public Boolean ExisteVerDespues(VerDespues vd)
         {
-            String consulta = "Select * from VerDespues where ID='" + vd.getId().ToString() + "'";
+            String consulta = "Select * from VerDespues where IdPelicula=" + vd.getIdPelicula() + "and IdUsuario ="+vd.getIdUser();
             return ds.Existe(consulta);
 
         }
@@ -55,7 +55,7 @@ namespace Dao
         {
             SqlCommand cmd = new SqlCommand();
             armarParametrosVerDespuesEliminar(ref cmd, vd);
-            return ds.EjecutarProcAlmacenado(cmd, "spEliminarVerDespues");
+            return ds.EjecutarProcAlmacenado(cmd, "sp_EliminarVerDespues");
 
         }
 
@@ -73,7 +73,7 @@ namespace Dao
             
             SqlCommand cmd = new SqlCommand();
             armarParametrosVerDespuesAgregar(ref cmd, vd);
-            return ds.EjecutarProcAlmacenado(cmd, "spAgregarVerDespues");
+            return ds.EjecutarProcAlmacenado(cmd, "sp_AgregarVerDespues");
 
         }
 
@@ -81,7 +81,7 @@ namespace Dao
         {
             SqlCommand cmd = new SqlCommand();
             armarParametrosMostrarVerDespues(ref cmd, vd);
-            DataTable Tabla = ds.ObtenerTabla("VerDespues", "spMostrarVerDespues");
+            DataTable Tabla = ds.ObtenerTabla("VerDespues"," select P.ID, P.Nombre, P.Año, G.Nombre as 'Genero'  from VerDespues V inner join Peliculas P on P.ID = V.IdPelicula inner join Generos G on G.ID = P.IdGenero inner join Usuario U on U.ID = V.IdUsuario where V.IdUsuario =" +vd.getIdUser());
             return Tabla;
 
         }

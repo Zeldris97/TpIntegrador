@@ -10,18 +10,25 @@ namespace Vistas.Usuario
 {
     public partial class VerDespues : System.Web.UI.Page
     {
+        NegocioVerDespues Vd = new NegocioVerDespues();
         protected void Page_Load(object sender, EventArgs e)
         {
-            NegocioVerDespues Vd = new NegocioVerDespues();
+            //NegocioVerDespues Vd = new NegocioVerDespues();
             if (IsPostBack == false)
             {
-                
-                int user;
-                user = (int)Session["idUsuario"];
-                grvLista.DataSource = Vd.MostrarVerDespues(user);
-                grvLista.DataBind();
+
+                cargarTabla();
 
             }
+        }
+
+        public void cargarTabla()
+        {
+            int user;
+            user = (int)Session["idUsuario"];
+            grvLista.DataSource = Vd.MostrarVerDespues(user);
+            grvLista.DataBind();
+
         }
 
         protected void grvLista_SelectedIndexChanged(object sender, EventArgs e)
@@ -37,6 +44,7 @@ namespace Vistas.Usuario
             string s_IdPelicula = ((Label)grvLista.Rows[e.RowIndex].FindControl("lblID")).Text;
             user = (int)Session["idUsuario"];
             vd.eliminarDeLista(user, Convert.ToInt32(s_IdPelicula));
+            cargarTabla();
 
 
         }

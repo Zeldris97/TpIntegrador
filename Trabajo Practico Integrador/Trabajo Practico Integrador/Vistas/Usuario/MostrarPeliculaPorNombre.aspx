@@ -39,31 +39,7 @@
                     </span>
                 </AlternatingItemTemplate>--%>
               
-                <AlternatingItemTemplate>
-                    <span style="background-color: #FAFAD2;color: #284775;">ID:
-                    <asp:Label ID="IDLabel" runat="server" Text='<%# Eval("ID") %>' />
-                    <br />
-                    Nombre:
-                    <asp:Label ID="NombreLabel" runat="server" Text='<%# Eval("Nombre") %>' />
-                    <br />
-                    Genero:
-                    <asp:Label ID="GeneroLabel" runat="server" Text='<%# Eval("Genero") %>' />
-                    <br />
-                    Categoria:
-                    <asp:Label ID="CategoriaLabel" runat="server" Text='<%# Eval("Categoria") %>' />
-                    <br />
-                    Año:
-                    <asp:Label ID="AñoLabel" runat="server" Text='<%# Eval("Año") %>' />
-                    <br />
-                    Sinopsis:
-                    <asp:Label ID="SinopsisLabel" runat="server" Text='<%# Eval("Sinopsis") %>' />
-                    <br />
-                    Imagen:
-                    <asp:Label ID="ImagenLabel" runat="server" Text='<%# Eval("Imagen") %>' />
-                    <br />
-                    <br />
-                    </span>
-                </AlternatingItemTemplate>
+               
               
                 <EditItemTemplate>
                     <span style="background-color: #FFCC66; color: #000080;">ID:
@@ -122,38 +98,39 @@
                     </span>
                 </InsertItemTemplate>
                 <ItemTemplate>
-                    <span style="background-color: #FFFBD6; color: #333333;">ID:
-                    <asp:Label ID="IDLabel" runat="server" Text='<%# Eval("ID") %>' />
+                    <asp:Label ID="IDLabel" runat="server" Text='<%# Eval("ID") %>'></asp:Label>
                     <br />
                     Nombre:
-                    <asp:Label ID="NombreLabel" runat="server" Text='<%# Eval("Nombre") %>' />
+                    <asp:Label ID="NombreLabel" runat="server" Text='<%# Eval("Nombre") %>'></asp:Label>
                     <br />
                     Genero:
-                    <asp:Label ID="GeneroLabel" runat="server" Text='<%# Eval("Genero") %>' />
+                    <asp:Label ID="GeneroLabel" runat="server" Text='<%# Eval("Genero") %>'></asp:Label>
                     <br />
                     Categoria:
-                    <asp:Label ID="CategoriaLabel" runat="server" Text='<%# Eval("Categoria") %>' />
+                    <asp:Label ID="CategoriaLabel" runat="server" Text='<%# Eval("Categoria") %>'></asp:Label>
                     <br />
                     Año:
-                    <asp:Label ID="AñoLabel" runat="server" Text='<%# Eval("Año") %>' />
+                    <asp:Label ID="AñoLabel" runat="server" Text='<%# Eval("Año") %>'></asp:Label>
                     <br />
                     Sinopsis:
-                    <asp:Label ID="SinopsisLabel" runat="server" Text='<%# Eval("Sinopsis") %>' />
+                    <asp:Label ID="SinopsisLabel" runat="server" Text='<%# Eval("Sinopsis") %>'></asp:Label>
                     <br />
                     &nbsp;<asp:ImageButton ID="ImageButton1" runat="server" ImageUrl='<%# Eval("Imagen") %>' Width="150px" />
+                    <span>
+                    </span>
+                    <br />
+                    <br />
+                    <span style="background-color: #FFFBD6;color: #333333;">
+                    <asp:Button ID="btnAgregar" runat="server" CommandArgument='<%# Eval("ID") %>' CommandName="eventoAgregar" OnClick="btnAgregar_Click" OnCommand="btnAgregar_Command" Text="Agregar a lista" />
                     </span>
                 </ItemTemplate>
                 <LayoutTemplate>
                     <div id="itemPlaceholderContainer" runat="server" style="font-family: Verdana, Arial, Helvetica, sans-serif;">
-                        <span runat="server" id="itemPlaceholder" />
-                        <br />
-                        <br />
-                        <span style="background-color: #FFFBD6;color: #333333;">
-                        <asp:Button ID="btnAgregar" runat="server" CommandArgument='<%# Eval("ID") %>' OnCommand="btnAgregar_Command" Text="Agregar a lista" />
-                        </span></span>
+                        <span style="background-color: #FFFBD6; color: #333333;" />
+                        ID: <span id="itemPlaceholder" runat="server"></span></span>
                     </div>
                     <div style="text-align: center;background-color: #FFCC66; font-family: Verdana, Arial, Helvetica, sans-serif;color: #333333;">
-                        <asp:DataPager ID="DataPager1" runat="server">
+                        <asp:DataPager ID="DataPager1" runat="server" PageSize="1">
                             <Fields>
                                 <asp:NextPreviousPagerField ButtonType="Button" ShowFirstPageButton="True" ShowLastPageButton="True" />
                             </Fields>
@@ -190,6 +167,8 @@
             </asp:ListView>
             <br />
         </div>
+        <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Usuario/ListaPeliculas.aspx">Ver lista</asp:HyperLink>
+        <br />
         <asp:LinkButton ID="btnLinkMenu" runat="server" OnClick="btnLinkMenu_Click">Volver al menu</asp:LinkButton>
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:OscarWinnersConnectionString %>" SelectCommand="select P.ID, P.Nombre, G.Nombre as 'Genero',C.Nombre as 'Categoria', P.Año, P.Sinopsis, P.Imagen from Peliculas P
 inner join Categorias C on C.ID=P.IdCategorias

@@ -24,55 +24,6 @@ namespace Vistas
 
         }
 
-        protected void btnLinkAccion_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("MostrarPeliculaPorGenero.aspx?Gen=Accion");
-        }
-
-        protected void btnLinkAventura_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("MostrarPeliculaPorGenero.aspx?Gen=Aventura");
-        }
-
-        protected void LinkButtonComedia_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("MostrarPeliculaPorGenero.aspx?Gen=Comedia");
-        }
-
-        protected void btnLinkDrama_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("MostrarPeliculaPorGenero.aspx?Gen=Drama");
-        }
-
-        protected void btnLinkTerror_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("MostrarPeliculaPorGenero.aspx?Gen=Terror");
-        }
-
-        protected void btnLinkMusical_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("MostrarPeliculaPorGenero.aspx?Gen=Musical");
-        }
-
-        protected void btnLinkSuspenso_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("MostrarPeliculaPorGenero.aspx?Gen=Suspenso");
-        }
-
-        protected void btnLinkCienciaFiccion_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("MostrarPeliculaPorGenero.aspx?Gen=Ciencia ficcion");
-        }
-
-        protected void btnLinkBelica_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("MostrarPeliculaPorGenero.aspx?Gen=Belica");
-        }
-
-        protected void btnLinkWestern_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("MostrarPeliculaPorGenero.aspx?Gen=Western+");
-        }
 
         protected void btnAceptar1_Click(System.Object sender, System.EventArgs e)
         {
@@ -99,6 +50,16 @@ namespace Vistas
             Application.Clear();
             Response.Redirect("Acceso usuario.aspx");
             
+        }
+
+        protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnAceptar4_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("MostrarPeliculaPorGenero.aspx?Gen=" + ddlGeneros.SelectedValue );
         }
     }
 }

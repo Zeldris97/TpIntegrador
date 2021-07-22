@@ -29,7 +29,7 @@ namespace Dao
         public Usuario getIdusuario(Usuario usr)
         {
             int id;
-            id= ds.ObtenerID("Select ID from Usuario where Usuario=" + usr.getUser());
+            id= ds.ObtenerID("Select ID from Usuario where Usuario='" + usr.getUser()+ "'" );
             usr.setId(id);
             return usr;
 

@@ -48,7 +48,7 @@ namespace Vistas
                 }
                 else
                 {
-                    Response.Write("Error al agregar pelicula");
+                    Response.Write("La pelicula ya fue agregada");
                 }
 
             }
