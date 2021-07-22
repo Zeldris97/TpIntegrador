@@ -25,7 +25,6 @@ Imagen varchar (50) null
 
 CREATE TABLE Usuario(
 ID int primary key identity (1,1) not null,
-Dni bigint not null,
 Nombre Varchar (50) not null,
 Apellido varchar (50) null,
 Email Varchar (50) not null,
@@ -73,12 +72,12 @@ ALTER TABLE Peliculas add constraint CHK_año check (Año > 1928 and año < YEAR
 	 --STORED PROCESS--
 
 	 CREATE PROCEDURE spAgregarPelicula (
-@NOMBREPELICULA varchar,
+@NOMBREPELICULA varchar(100),
 @SINOPSIS text,
 @AÑO bigint,
 @IDGENERO int,
 @IDCATEGORIA int,
-@IDIMAGEN varchar
+@IDIMAGEN varchar(50)
 )
 
 AS 
@@ -199,3 +198,22 @@ inner join Generos G on G.ID = P.IdGenero
 inner join Usuario U on U.ID=V.IdUsuario
 where V.IdUsuario = @IDUSUARIO
 end
+
+
+	 CREATE PROCEDURE spModificarPelicula (
+@IDPELICULA int,
+@NOMBREPELICULA varchar(100),
+@AÑO bigint,
+@IDGENERO int,
+@IDCATEGORIA int
+)
+
+AS 
+BEGIN 
+     UPDATE [OscarWinners].[dbo].[Peliculas]
+		 SET	[NOMBRE]		=@NOMBREPELICULA
+			,	[AÑO]			=@AÑO
+			,	[IDGENERO]		=@IDGENERO
+			,	[IDCATEGORIAS]	=@IDCATEGORIA
+		 WHERE Peliculas.ID		=@IDPELICULA
+	 END

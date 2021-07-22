@@ -46,9 +46,26 @@ namespace Negocio
                 return false;
             }
 
+        }
+        public bool editarPelicula(int id, string nombre, int IdGenero, int IdCategorias, long anio)
+        {
+            Peliculas pel = new Peliculas();
+            pel.setId(id);
+            pel.setNombre(nombre);
+            pel.setIdGenero(IdGenero);
+            pel.setIdCategorias(IdCategorias);
+            pel.setAnio(anio);
 
 
-
+            int cantFilas = dato.editarPelicula(pel);
+            if (cantFilas == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
 
         }
 

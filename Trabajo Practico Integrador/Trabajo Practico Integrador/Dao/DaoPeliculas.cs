@@ -82,6 +82,29 @@ namespace Dao
             return ds.EjecutarProcAlmacenado(cmd, "spAgregarPelicula");
 
         }
+        private void armarParametrosPeliculasEditar(ref SqlCommand comando, Peliculas Peli)
+        {
+            SqlParameter sqlParametros = new SqlParameter();
+            sqlParametros = comando.Parameters.Add("IDPELICULA", SqlDbType.Int);
+            sqlParametros.Value = Peli.getId();
+            sqlParametros = comando.Parameters.Add("@NOMBREPELICULA", SqlDbType.VarChar);
+            sqlParametros.Value = Peli.getNombre();
+            sqlParametros = comando.Parameters.Add("@IDGENERO", SqlDbType.Int);
+            sqlParametros.Value = Peli.getIdGenero();
+            sqlParametros = comando.Parameters.Add("@IDCATEGORIA", SqlDbType.Int);
+            sqlParametros.Value = Peli.getCategorias();
+            sqlParametros = comando.Parameters.Add("@AÑO", SqlDbType.Int);
+            sqlParametros.Value = Peli.getAnio();
+        }
+
+
+        public int editarPelicula(Peliculas Peli)
+        {
+            SqlCommand cmd = new SqlCommand();
+            armarParametrosPeliculasEditar(ref cmd, Peli);
+            return ds.EjecutarProcAlmacenado(cmd, "spModificarPelicula");
+
+        }
         private void armarParametrosBuscarPorNombre(ref SqlCommand comando, Peliculas Peli)
         {
             SqlParameter sqlParametros = new SqlParameter();
