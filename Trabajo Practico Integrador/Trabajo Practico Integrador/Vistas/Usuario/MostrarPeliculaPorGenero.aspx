@@ -15,77 +15,7 @@
             <br />
             <asp:ListView ID="lvGenero" runat="server" DataSourceID="SqlDataSource1" DataKeyNames="ID">
               
-<%--                <AlternatingItemTemplate>
-                    <span style="background-color: #FAFAD2;color: #284775;">Nombre:
-                    <asp:Label ID="NombreLabel" runat="server" Text='<%# Eval("Nombre") %>' />
-                    <br />
-                    Genero:
-                    <asp:Label ID="GeneroLabel" runat="server" Text='<%# Eval("Genero") %>' />
-                    <br />
-                    Categoria:
-                    <asp:Label ID="CategoriaLabel" runat="server" Text='<%# Eval("Categoria") %>' />
-                    <br />
-                    Año:
-                    <asp:Label ID="AñoLabel" runat="server" Text='<%# Eval("Año") %>' />
-                    <br />
-                    Sinopsis:
-                    <asp:Label ID="SinopsisLabel" runat="server" Text='<%# Eval("Sinopsis") %>' />
-                    <br />
-                    Imagen:
-                    <asp:Label ID="ImagenLabel" runat="server" Text='<%# Eval("Imagen") %>' />
-                    <br />
-                    <br />
-                    </span>
-                </AlternatingItemTemplate>--%>
-              
-                <%--<AlternatingItemTemplate>
-                    <span style="background-color: #FAFAD2;color: #284775;">Nombre:
-                    <asp:Label ID="NombreLabel" runat="server" Text='<%# Eval("Nombre") %>' />
-                    <br />
-                    Genero:
-                    <asp:Label ID="GeneroLabel" runat="server" Text='<%# Eval("Genero") %>' />
-                    <br />
-                    Categoria:
-                    <asp:Label ID="CategoriaLabel" runat="server" Text='<%# Eval("Categoria") %>' />
-                    <br />
-                    Año:
-                    <asp:Label ID="AñoLabel" runat="server" Text='<%# Eval("Año") %>' />
-                    <br />
-                    Sinopsis:
-                    <asp:Label ID="SinopsisLabel" runat="server" Text='<%# Eval("Sinopsis") %>' />
-                    <br />
-                    Imagen:
-                    <asp:Label ID="ImagenLabel" runat="server" Text='<%# Eval("Imagen") %>' />
-                    <br />
-                    <br />
-                    </span>
-                </AlternatingItemTemplate>--%>
-              
-<%--                <AlternatingItemTemplate>
-                    <span style="background-color: #FAFAD2;color: #284775;">ID:
-                    <asp:Label ID="IDLabel" runat="server" Text='<%# Eval("ID") %>' />
-                    <br />
-                    Nombre:
-                    <asp:Label ID="NombreLabel" runat="server" Text='<%# Eval("Nombre") %>' />
-                    <br />
-                    Genero:
-                    <asp:Label ID="GeneroLabel" runat="server" Text='<%# Eval("Genero") %>' />
-                    <br />
-                    Categoria:
-                    <asp:Label ID="CategoriaLabel" runat="server" Text='<%# Eval("Categoria") %>' />
-                    <br />
-                    Año:
-                    <asp:Label ID="AñoLabel" runat="server" Text='<%# Eval("Año") %>' />
-                    <br />
-                    Sinopsis:
-                    <asp:Label ID="SinopsisLabel" runat="server" Text='<%# Eval("Sinopsis") %>' />
-                    <br />
-                    Imagen:
-                    <asp:Label ID="ImagenLabel" runat="server" Text='<%# Eval("Imagen") %>' />
-                    <br />
-                    <br />
-                    </span>
-                </AlternatingItemTemplate>--%>
+<%--              
               
                 <EditItemTemplate>
                     <span style="background-color: #FFCC66;color: #000080;">ID:

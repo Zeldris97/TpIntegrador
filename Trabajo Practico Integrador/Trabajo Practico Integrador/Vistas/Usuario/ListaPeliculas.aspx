@@ -86,7 +86,7 @@
                     <br />&nbsp;<strong><asp:Label ID="NombreLabel" runat="server" CssClass="auto-style3" Text='<%# Eval("Nombre") %>'></asp:Label>
                     <br />
                     </strong>
-                    <asp:Button ID="btnVerDespues" runat="server" Text="Ver despues" CommandArgument='<%# Eval("ID") %>' OnCommand="btnVerDespues_Command" />
+                    <asp:Button ID="btnVerDespues" runat="server" Text="Ver despues" CommandArgument='<%# Eval("ID") %>' OnCommand="btnVerDespues_Command" CommandName="eventoVerDespues" />
                     <br /></td>
             </ItemTemplate>
             <LayoutTemplate>

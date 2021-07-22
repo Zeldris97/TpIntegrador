@@ -25,7 +25,7 @@ namespace Vistas.Administrador
         {
             NegocioUsuario dr = new NegocioUsuario();
             bool ex;
-            ex = dr.BuscarUsuario(Convert.ToString(txtUsuario), Convert.ToString(txtContraseña));
+            ex = dr.BuscarUsuarioAdmin(txtUsuario.Text, txtContraseña.Text);
 
 
             if (ex)
@@ -51,5 +51,6 @@ namespace Vistas.Administrador
 
             }
 
-        }
+        
+    }
     }

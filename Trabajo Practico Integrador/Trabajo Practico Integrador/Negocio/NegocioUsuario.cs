@@ -40,6 +40,25 @@ namespace Negocio
 
 
         }
+        public bool BuscarUsuarioAdmin (string Usuario, string Contraseña)
+        {
+            Usuario usr = new Usuario();
+            usr.setUser(Usuario);
+            usr.setContrasenia(Contraseña);
+
+           if (dato.ExisteUsuarioAdmin(usr))
+            {
+                return true;
+
+            }
+
+           else 
+            {
+                return false;
+            }
+
+
+        }
 
         public bool BuscarUsuarioporUsrName(string Usuario)
         {
